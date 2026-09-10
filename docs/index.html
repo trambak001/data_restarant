@@ -3,43 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kathiyawadi Live Market Dashboard</title>
+  <title>Ahmedabad Market Brief | Kathiyawadi</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 24px; background: #f7f9fc; color: #1c2430; }
-    .kpis { display:grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); gap:12px; margin:18px 0; }
-    .card { background:#fff; border:1px solid #dfe6ef; border-radius:8px; padding:12px; }
-    table { width:100%; border-collapse: collapse; background:#fff; }
-    th, td { border:1px solid #dfe6ef; text-align:left; padding:8px; }
-    th { background:#edf3fb; }
+    :root { --ink:#16231f; --muted:#6b7770; --paper:#f4f1e9; --card:#fffdf8; --green:#174d3d; --lime:#c5dc68; --orange:#e77c43; --line:#d9ded2; }
+    * { box-sizing:border-box; } body { margin:0; color:var(--ink); background:var(--paper); font-family: Georgia, 'Times New Roman', serif; }
+    .shell { max-width:1240px; margin:auto; padding:34px 28px 60px; }
+    .topline { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:18px; font-family:Arial,sans-serif; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); }
+    .mark { color:var(--green); font-weight:bold; } .hero { display:grid; grid-template-columns:1.45fr .8fr; gap:48px; padding:62px 0 44px; align-items:end; }
+    h1 { font-size:clamp(42px,6vw,78px); line-height:.92; letter-spacing:-2px; font-weight:normal; margin:0 0 22px; max-width:720px; }
+    .dek { max-width:620px; color:var(--muted); font:17px/1.6 Arial,sans-serif; } .stamp { border-left:4px solid var(--orange); padding:4px 0 4px 18px; font:13px/1.5 Arial,sans-serif; color:var(--muted); }
+    .stamp strong { display:block; color:var(--ink); font:24px Georgia,serif; margin-bottom:5px; } .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:38px; }
+    .kpi { background:var(--green); color:#fff; padding:22px 20px; min-height:126px; } .kpi:nth-child(2) { background:var(--lime); color:var(--ink); } .kpi:nth-child(3) { background:var(--orange); }
+    .kpi label { display:block; font:11px Arial,sans-serif; letter-spacing:1.2px; text-transform:uppercase; opacity:.75; } .kpi strong { display:block; font-size:34px; font-weight:normal; margin-top:18px; }
+    .grid { display:grid; grid-template-columns:1.25fr .75fr; gap:18px; margin-bottom:18px; } .panel { background:var(--card); border:1px solid var(--line); padding:26px; }
+    .panel h2 { font-size:25px; font-weight:normal; margin:0 0 6px; } .sub { color:var(--muted); font:12px Arial,sans-serif; margin:0 0 22px; }
+    .recommend { background:#dfe8bb; border:0; } .recommend h2 { color:var(--green); } .recommend p { font-size:20px; line-height:1.35; margin:26px 0 0; }
+    .band { margin:20px 0; font:13px Arial,sans-serif; } .band div:first-child { display:flex; justify-content:space-between; margin-bottom:8px; } .band span { color:var(--muted); } .bar { height:10px; background:#e6e8de; } .bar i { display:block; height:100%; background:var(--orange); }
+    table { width:100%; border-collapse:collapse; font:13px Arial,sans-serif; } th { color:var(--muted); font-size:10px; letter-spacing:1px; text-transform:uppercase; text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); } td { padding:13px 8px; border-bottom:1px solid var(--line); vertical-align:top; } td small { display:block; color:var(--muted); margin-top:4px; } .rating { color:var(--orange); font-weight:bold; }
+    .footer { color:var(--muted); font:11px Arial,sans-serif; border-top:1px solid var(--line); padding-top:18px; margin-top:32px; }
+    @media (max-width:760px) { .shell { padding:22px 16px 40px; } .hero,.grid { grid-template-columns:1fr; gap:24px; } .hero { padding:42px 0 30px; } .kpis { grid-template-columns:repeat(2,1fr); } .kpi strong { font-size:28px; } .panel { padding:20px 16px; } table { min-width:540px; } .table-wrap { overflow:auto; } }
   </style>
 </head>
 <body>
-  <h1>Kathiyawadi Restaurant Live Market Page</h1>
-  <p>Auto-updated by GitHub Actions from curated live data.</p>
-  <div class="kpis">
-    <div class="card"><strong>Restaurants</strong><br>17</div>
-    <div class="card"><strong>Menu Rows</strong><br>91</div>
-    <div class="card"><strong>Avg Price</strong><br>₹190.47</div>
-    <div class="card"><strong>Median Price</strong><br>₹169.0</div>
-    <div class="card"><strong>Min Price</strong><br>₹30.0</div>
-    <div class="card"><strong>Max Price</strong><br>₹520.0</div>
-  </div>
-  <h2>Sample Restaurants</h2>
-  <table><thead><tr><th>Restaurant_Name</th><th>Area</th><th>Restaurant_Rating</th><th>Source_System</th></tr></thead><tbody><tr><td>Shree Khodiyar Kathiyawadi Dhaba</td><td>Naranpura</td><td>4.1</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Om Kathiyawadi Dhaba</td><td>Prahlad Nagar</td><td>4.3</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Shree Chamunda Kathiyawadi Dhaba</td><td>Chandkheda</td><td>4.2</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Shree Marutinandan Kathiyawadi Restaurant</td><td>Shahpur</td><td>4.3</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Sorath Suddh Kathiyawadi Restaurant</td><td>Gota</td><td>4.5</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Damodar Kathiyawadi</td><td>Vastrapur</td><td>4.9</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Gir Kathiyawadi Restaurant</td><td>Vastrapur</td><td>4.1</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Kathyawadi Chatako</td><td>Vastrapur</td><td>3.9</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Mr And Mrs Kathiyawadi</td><td>Vastrapur</td><td>5.0</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Rudu Kathiawad</td><td>Vastrapur</td><td>3.8</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Special Kathiyawadi</td><td>Vastrapur</td><td>4.5</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Khodal Kathiyawadi </td><td>Gota</td><td>3.9</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Varudi Khodiyar Kathiyawadi</td><td>Ognaj</td><td>3.3</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Gurudev Kathiyawadi </td><td>Bodakdev</td><td>3.8</td><td>kathiyawadi_seed_workbook</td></tr>
-<tr><td>Bajaro Kathiyawadi</td><td>Ahmedabad</td><td>4.8</td><td>kathiyawadi_seed_workbook</td></tr></tbody></table>
-  <p><small>Data source coverage: Ahmedabad vegetarian/Kathiyawadi restaurants from OpenStreetMap, optional Google Places, and optional external menu connectors.</small></p>
+  <main class="shell">
+    <div class="topline"><span class="mark">FIELDNOTE / AHMEDABAD</span><span>Market intelligence desk · Live edition</span></div>
+    <section class="hero"><div><h1>Kathiyawadi,<br><em>priced clearly.</em></h1><p class="dek">A concise view of the Ahmedabad vegetarian dining market, built for operators, investors and teams deciding what to launch next.</p></div><div class="stamp"><strong>Read the market</strong>Use the midpoint to frame your offer, the area mix to choose where to compete, and the leaders to understand the bar.</div></section>
+    <section class="kpis"><div class="kpi"><label>Restaurants tracked</label><strong>17</strong></div><div class="kpi"><label>Menu observations</label><strong>91</strong></div><div class="kpi"><label>Market midpoint</label><strong>₹169</strong></div><div class="kpi"><label>Observed range</label><strong>₹30–₹520</strong></div></section>
+    <section class="grid"><article class="panel recommend"><h2>Analyst's read</h2><p>The market midpoint is ₹169 across 91 menu observations. 48% of listed dishes sit above that midpoint, suggesting room for a clear value tier before premium pricing.</p></article><article class="panel"><h2>Price architecture</h2><p class="sub">Share of validated dishes by customer-facing tier</p><div class="band"><div><strong>Entry</strong><span>17 dishes · 19%</span></div><div class="bar"><i style="width:19%"></i></div></div><div class="band"><div><strong>Core</strong><span>57 dishes · 63%</span></div><div class="bar"><i style="width:63%"></i></div></div><div class="band"><div><strong>Premium</strong><span>17 dishes · 19%</span></div><div class="bar"><i style="width:19%"></i></div></div></article></section>
+    <section class="grid"><article class="panel"><h2>Where the market clusters</h2><p class="sub">Restaurant footprint by Ahmedabad area</p><div class="table-wrap"><table><thead><tr><th>Area</th><th>Restaurants</th><th>Avg rating</th></tr></thead><tbody><tr><td>Vastrapur</td><td>6</td><td><span class="rating">4.4</span></td></tr><tr><td>Gota</td><td>3</td><td><span class="rating">4.2</span></td></tr><tr><td>Ahmedabad</td><td>1</td><td><span class="rating">4.8</span></td></tr><tr><td>Asarwa</td><td>1</td><td><span class="rating">4.3</span></td></tr><tr><td>Prahlad Nagar</td><td>1</td><td><span class="rating">4.3</span></td></tr><tr><td>Shahpur</td><td>1</td><td><span class="rating">4.3</span></td></tr></tbody></table></div></article><article class="panel"><h2>Signal to watch</h2><p class="sub">What is shaping this edition</p><p style="font-size:18px;line-height:1.45">The strongest competitive signal is not the highest price. It is a credible combination of rating, local presence and a menu that lands near the market midpoint.</p><p class="sub">Sources: kathiyawadi_seed_workbook</p></article></section>
+    <section class="panel"><h2>Competitive set</h2><p class="sub">Highest-rated tracked operators, with review depth for context</p><div class="table-wrap"><table><thead><tr><th>Restaurant</th><th>Rating</th><th>Reviews</th><th>Price signal</th></tr></thead><tbody><tr><td><strong>Mr And Mrs Kathiyawadi</strong><small>Vastrapur</small></td><td><span class="rating">5.0</span></td><td>98</td><td>₹500 for two</td></tr><tr><td><strong>Damodar Kathiyawadi</strong><small>Vastrapur</small></td><td><span class="rating">4.9</span></td><td>29</td><td>₹300 for two</td></tr><tr><td><strong>Bajaro Kathiyawadi</strong><small>Ahmedabad</small></td><td><span class="rating">4.8</span></td><td>520</td><td>₹200for two</td></tr><tr><td><strong>Sorath Suddh Kathiyawadi Restaurant</strong><small>Gota</small></td><td><span class="rating">4.5</span></td><td>855</td><td>₹300 for two</td></tr><tr><td><strong>Special Kathiyawadi</strong><small>Vastrapur</small></td><td><span class="rating">4.5</span></td><td>27</td><td>₹300 for two</td></tr><tr><td><strong>Shree Marutinandan Kathiyawadi Restaurant</strong><small>Shahpur</small></td><td><span class="rating">4.3</span></td><td>202</td><td>₹400 for two</td></tr><tr><td><strong>Om Kathiyawadi Dhaba</strong><small>Prahlad Nagar</small></td><td><span class="rating">4.3</span></td><td>200</td><td>₹300 for two</td></tr><tr><td><strong>Maher Kathiyawadi</strong><small>Asarwa</small></td><td><span class="rating">4.3</span></td><td>89</td><td>₹450for two</td></tr></tbody></table></div></section>
+    <p class="footer">Updated by the live data pipeline · Coverage: Ahmedabad vegetarian / Kathiyawadi restaurants · Prices shown in INR · This view is directional market intelligence, not a consumer ranking.</p>
+  </main>
 </body>
 </html>
