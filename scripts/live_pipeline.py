@@ -363,6 +363,85 @@ def load_external_menu_file() -> SourceResult:
         )
 
 
+def load_experience_submissions() -> SourceResult:
+    source_name = "community_experience"
+    csv_path = EXTERNAL_DIR / "experience_submissions.csv"
+    if not csv_path.exists():
+        return SourceResult(
+            name=source_name,
+            status="skipped",
+            record_count=0,
+            error="data/external/experience_submissions.csv not found",
+            restaurants=[],
+            menus=[],
+        )
+
+    try:
+        df = pd.read_csv(csv_path).fillna("")
+        restaurants: list[dict[str, Any]] = []
+        menus: list[dict[str, Any]] = []
+        for _, row in df.iterrows():
+            if str(row.get("Status", "")).lower() not in {"validated", "pending_review"}:
+                continue
+            name = str(row.get("Restaurant_Name", "")).strip()
+            area = str(row.get("Area", "Ahmedabad")).strip() or "Ahmedabad"
+            if not name:
+                continue
+            issue_number = str(row.get("Issue_Number", "")).strip()
+            source_url = str(row.get("Source_URL", "")).strip() or (
+                f"https://github.com/trambak001/data_restarant/issues/{issue_number}"
+                if issue_number else ""
+            )
+            restaurants.append(
+                {
+                    "Restaurant_Name": name,
+                    "City": "Ahmedabad",
+                    "Area": area,
+                    "Restaurant_Type": "Vegetarian",
+                    "Cuisine": "Kathiyawadi",
+                    "Restaurant_Rating": safe_float(row.get("Experience_Rating")),
+                    "Review_Count": 1,
+                    "Price_Range": "",
+                    "Source_URL": source_url,
+                    "Source_Record_ID": f"experience_{issue_number or normalize_text(name)}",
+                    "Source_System": source_name,
+                }
+            )
+            dish_name = str(row.get("Dish_Name", "")).strip()
+            dish_price = safe_float(row.get("Dish_Price"))
+            if dish_name and dish_price is not None:
+                menus.append(
+                    {
+                        "Source_Record_ID": f"experience_{issue_number or normalize_text(name)}",
+                        "Dish_Name": dish_name,
+                        "Price": dish_price,
+                        "Portion_Size": "As observed",
+                        "Serving_Unit": "Plate",
+                        "Menu_Type": "Community observation",
+                        "Source_URL": source_url,
+                        "Source_System": source_name,
+                    }
+                )
+
+        return SourceResult(
+            name=source_name,
+            status="success",
+            record_count=len(restaurants),
+            error=None,
+            restaurants=restaurants,
+            menus=menus,
+        )
+    except Exception as exc:
+        return SourceResult(
+            name=source_name,
+            status="failed",
+            record_count=0,
+            error=str(exc),
+            restaurants=[],
+            menus=[],
+        )
+
+
 def load_local_seed_source() -> SourceResult:
     source_name = "kathiyawadi_seed_workbook"
     market_path = ROOT / "Kathiyawadi_Market_Data.xlsx"
@@ -657,6 +736,7 @@ def run_pipeline() -> None:
         fetch_osm_restaurants(),
         fetch_google_places(),
         load_external_menu_file(),
+        load_experience_submissions(),
     ]
 
     write_source_snapshots(timestamp, source_results)

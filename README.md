@@ -28,6 +28,12 @@ Build and maintain a reliable benchmark dataset for pricing decisions by continu
 
 > Notes: source usage must follow each platform’s terms, robots/rate limits, and permitted API access.
 
+### Community experience updates
+
+The live page includes **Share a field experience**. A visitor can submit a recent restaurant experience, optional dish price, and a public source link through a GitHub Issue form. GitHub Actions validates the fields, stores the submission in `data/external/experience_submissions.csv`, and refreshes the curated tables and page.
+
+To enable the public map connector, add `GOOGLE_PLACES_API_KEY` as a repository secret. OpenStreetMap discovery runs without a key. Google Places provides restaurant discovery and ratings; menu prices must come from `data/external/menu_prices.csv`, a permitted connector export, or a submitted field observation. The pipeline does not scrape restricted delivery platforms.
+
 ### Repeatable ingestion layer
 
 Pipeline script: `/home/runner/work/data_restarant/data_restarant/scripts/live_pipeline.py`

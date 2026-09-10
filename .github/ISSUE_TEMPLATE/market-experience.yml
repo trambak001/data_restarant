@@ -1,0 +1,79 @@
+name: Share a market experience
+description: Add a recent restaurant visit, menu observation, or service signal.
+title: "Market experience: "
+labels:
+  - market-experience
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the Ahmedabad market brief. Please share one recent, factual observation. Do not include personal, private, or payment information.
+  - type: input
+    id: restaurant_name
+    attributes:
+      label: Restaurant name
+      placeholder: Shree Example Kathiyawadi
+    validations:
+      required: true
+  - type: input
+    id: area
+    attributes:
+      label: Area
+      placeholder: Vastrapur
+    validations:
+      required: true
+  - type: input
+    id: visit_date
+    attributes:
+      label: Visit date
+      description: Use YYYY-MM-DD where possible.
+      placeholder: 2026-09-10
+    validations:
+      required: true
+  - type: dropdown
+    id: experience_rating
+    attributes:
+      label: Overall experience
+      options:
+        - "5 - Excellent"
+        - "4 - Good"
+        - "3 - Average"
+        - "2 - Needs improvement"
+        - "1 - Poor"
+    validations:
+      required: true
+  - type: dropdown
+    id: value_rating
+    attributes:
+      label: Value for money
+      options:
+        - "5 - Excellent"
+        - "4 - Good"
+        - "3 - Average"
+        - "2 - Needs improvement"
+        - "1 - Poor"
+    validations:
+      required: true
+  - type: input
+    id: dish_name
+    attributes:
+      label: Dish observed (optional)
+      placeholder: Sev Tameta
+  - type: input
+    id: dish_price
+    attributes:
+      label: Dish price in INR (optional)
+      placeholder: "180"
+  - type: textarea
+    id: experience_notes
+    attributes:
+      label: What did you observe?
+      description: Mention food, service, ambience, wait time, or menu clarity. Keep it specific and respectful.
+      placeholder: The thali was fresh, service took 15 minutes, and the portion felt good for the price.
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Public source link (optional)
+      placeholder: https://maps.google.com/...

@@ -1,0 +1,52 @@
+name: Process market experience
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  process-experience:
+    if: contains(github.event.issue.labels.*.name, 'market-experience')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate and store experience
+        env:
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+        run: python scripts/ingest_experience_issue.py
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh market outputs
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: |
+          python scripts/live_pipeline.py
+          python scripts/build_pages.py
+
+      - name: Commit market update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ docs/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: add community market experience"
+            git push
+          fi
+
+      - name: Close processed submission
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue close "${{ github.event.issue.number }}" --comment "Thanks. Your experience was validated and added to the next market refresh."
