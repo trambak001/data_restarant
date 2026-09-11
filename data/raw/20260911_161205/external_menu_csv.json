@@ -1,0 +1,8 @@
+{
+  "name": "external_menu_csv",
+  "status": "skipped",
+  "record_count": 0,
+  "error": "data/external/menu_prices.csv not found",
+  "restaurants": [],
+  "menus": []
+}

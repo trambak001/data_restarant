@@ -3,37 +3,1341 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ahmedabad Market Brief | Kathiyawadi</title>
+  <title>Kathiyawadi Market Pricing & Map Intelligence | Ahmedabad</title>
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet CSS (100% Free OpenStreetMap) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
   <style>
-    :root { --ink:#16231f; --muted:#6b7770; --paper:#f4f1e9; --card:#fffdf8; --green:#174d3d; --lime:#c5dc68; --orange:#e77c43; --line:#d9ded2; }
-    * { box-sizing:border-box; } body { margin:0; color:var(--ink); background:var(--paper); font-family: Georgia, 'Times New Roman', serif; }
-    .shell { max-width:1240px; margin:auto; padding:34px 28px 60px; }
-    .topline { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:18px; font-family:Arial,sans-serif; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); }
-    .mark { color:var(--green); font-weight:bold; } .hero { display:grid; grid-template-columns:1.45fr .8fr; gap:48px; padding:62px 0 44px; align-items:end; }
-    h1 { font-size:clamp(42px,6vw,78px); line-height:.92; letter-spacing:-2px; font-weight:normal; margin:0 0 22px; max-width:720px; }
-    .dek { max-width:620px; color:var(--muted); font:17px/1.6 Arial,sans-serif; } .stamp { border-left:4px solid var(--orange); padding:4px 0 4px 18px; font:13px/1.5 Arial,sans-serif; color:var(--muted); }
-    .stamp strong { display:block; color:var(--ink); font:24px Georgia,serif; margin-bottom:5px; } .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:38px; }
-    .kpi { background:var(--green); color:#fff; padding:22px 20px; min-height:126px; } .kpi:nth-child(2) { background:var(--lime); color:var(--ink); } .kpi:nth-child(3) { background:var(--orange); }
-    .kpi label { display:block; font:11px Arial,sans-serif; letter-spacing:1.2px; text-transform:uppercase; opacity:.75; } .kpi strong { display:block; font-size:34px; font-weight:normal; margin-top:18px; }
-    .grid { display:grid; grid-template-columns:1.25fr .75fr; gap:18px; margin-bottom:18px; } .panel { background:var(--card); border:1px solid var(--line); padding:26px; }
-    .panel h2 { font-size:25px; font-weight:normal; margin:0 0 6px; } .sub { color:var(--muted); font:12px Arial,sans-serif; margin:0 0 22px; }
-    .recommend { background:#dfe8bb; border:0; } .recommend h2 { color:var(--green); } .recommend p { font-size:20px; line-height:1.35; margin:26px 0 0; }
-    .band { margin:20px 0; font:13px Arial,sans-serif; } .band div:first-child { display:flex; justify-content:space-between; margin-bottom:8px; } .band span { color:var(--muted); } .bar { height:10px; background:#e6e8de; } .bar i { display:block; height:100%; background:var(--orange); }
-    table { width:100%; border-collapse:collapse; font:13px Arial,sans-serif; } th { color:var(--muted); font-size:10px; letter-spacing:1px; text-transform:uppercase; text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); } td { padding:13px 8px; border-bottom:1px solid var(--line); vertical-align:top; } td small { display:block; color:var(--muted); margin-top:4px; } .rating { color:var(--orange); font-weight:bold; }
-    .footer { color:var(--muted); font:11px Arial,sans-serif; border-top:1px solid var(--line); padding-top:18px; margin-top:32px; }
-    .contribute { display:inline-block; margin-top:18px; padding:12px 16px; background:var(--green); color:#fff; text-decoration:none; font:12px Arial,sans-serif; letter-spacing:.4px; }
-    @media (max-width:760px) { .shell { padding:22px 16px 40px; } .hero,.grid { grid-template-columns:1fr; gap:24px; } .hero { padding:42px 0 30px; } .kpis { grid-template-columns:repeat(2,1fr); } .kpi strong { font-size:28px; } .panel { padding:20px 16px; } table { min-width:540px; } .table-wrap { overflow:auto; } }
+    :root {
+      --bg: #f8f6f1;
+      --surface: #ffffff;
+      --surface-elevated: #fbf9f5;
+      --card-border: rgba(18, 56, 43, 0.12);
+      --ink: #14241e;
+      --muted: #5e6f66;
+      --primary: #12382b;
+      --primary-light: #1b4f3d;
+      --terracotta: #df5d2f;
+      --gold: #d4973b;
+      --accent-green: #2a9d8f;
+      --radius: 14px;
+      --shadow-sm: 0 2px 8px rgba(20, 36, 30, 0.05);
+      --shadow-md: 0 8px 24px rgba(20, 36, 30, 0.08);
+      --shadow-lg: 0 16px 40px rgba(20, 36, 30, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 24px 20px 80px;
+    }
+
+    /* Top Bar */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0 22px;
+      border-bottom: 1px solid var(--card-border);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .pulse-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary);
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.25);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 40px;
+      padding: 48px 0 36px;
+      align-items: center;
+    }
+    h1 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: clamp(40px, 5.2vw, 68px);
+      line-height: 1.05;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 18px;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+    .hero-lead {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 620px;
+    }
+    .hero-callout {
+      background: var(--surface);
+      border: 1px solid var(--card-border);
+      border-left: 5px solid var(--terracotta);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-callout h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 19px;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .hero-callout p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-action:hover {
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    /* KPI Grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 10px 0 36px;
+    }
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--primary);
+    }
+    .kpi-card:nth-child(2)::after { background: var(--terracotta); }
+    .kpi-card:nth-child(3)::after { background: var(--gold); }
+    .kpi-card:nth-child(4)::after { background: var(--accent-green); }
+    .kpi-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .kpi-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .kpi-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* Section Cards */
+    .section-title-wrap {
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* Map Layout */
+    .map-section {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 20px;
+      margin-bottom: 44px;
+    }
+    .map-container {
+      background: var(--surface);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .map-header {
+      padding: 16px 20px;
+      background: #fff;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .map-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      color: var(--ink);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    #map {
+      height: 520px;
+      width: 100%;
+      z-index: 1;
+    }
+    .map-sidebar {
+      background: var(--surface);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    .table-container {
+      overflow-y: auto;
+      max-height: 470px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th {
+      text-align: left;
+      padding: 10px 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--muted);
+      border-bottom: 2px solid var(--bg);
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+    }
+    td {
+      padding: 12px;
+      border-bottom: 1px solid var(--bg);
+      vertical-align: middle;
+    }
+    tr:hover td {
+      background: #faf8f3;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .badge-count {
+      background: #eef2eb;
+      color: var(--primary);
+    }
+    .rating-badge {
+      color: #e07a1f;
+      font-weight: 700;
+    }
+    .vfm-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .tier-champion {
+      background: #e4f5eb;
+      color: #1b663b;
+    }
+    .tier-premium {
+      background: #fdf3e2;
+      color: #92580a;
+    }
+    .tier-budget {
+      background: #fbeef9;
+      color: #832777;
+    }
+    .src-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .src-link:hover { text-decoration: underline; }
+
+    /* Dish Cards Grid */
+    .dish-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 44px;
+    }
+    .dish-card {
+      background: var(--surface);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .dish-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .dish-category {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--terracotta);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .dish-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .dish-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+      margin-bottom: 18px;
+      min-height: 38px;
+    }
+    .dish-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid var(--bg);
+    }
+    .metric-block {
+      display: flex;
+      flex-direction: column;
+    }
+    .m-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .m-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .m-val.highlight {
+      color: var(--terracotta);
+      font-size: 20px;
+    }
+
+    /* Price Bands */
+    .band-item {
+      margin: 14px 0;
+    }
+    .band-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    .band-track {
+      height: 8px;
+      background: #e9e6df;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .band-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    /* Competitive Leaderboard */
+    .leaderboard-section {
+      background: var(--surface);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 40px;
+    }
+    .leaderboard-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .search-input {
+      padding: 8px 14px;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      font-size: 13px;
+      width: 260px;
+      background: var(--bg);
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+      background: #fff;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding-top: 24px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; }
+      .map-section { grid-template-columns: 1fr; }
+      .dish-grid { grid-template-columns: repeat(2, 1fr); }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .dish-grid { grid-template-columns: 1fr; }
+      .kpi-grid { grid-template-columns: 1fr; }
+      .map-header { flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <div class="topline"><span class="mark">FIELDNOTE / AHMEDABAD</span><span>Market intelligence desk · Live edition</span></div>
-    <section class="hero"><div><h1>Kathiyawadi,<br><em>priced clearly.</em></h1><p class="dek">A concise view of the Ahmedabad vegetarian dining market, built for operators, investors and teams deciding what to launch next.</p></div><div class="stamp"><strong>Read the market</strong>Use the midpoint to frame your offer, the area mix to choose where to compete, and the leaders to understand the bar.<br><a class="contribute" href="https://github.com/trambak001/data_restarant/issues/new?template=market-experience.yml">Share a field experience ↗</a></div></section>
-    <section class="kpis"><div class="kpi"><label>Restaurants tracked</label><strong>17</strong></div><div class="kpi"><label>Menu observations</label><strong>91</strong></div><div class="kpi"><label>Market midpoint</label><strong>₹169</strong></div><div class="kpi"><label>Observed range</label><strong>₹30–₹520</strong></div></section>
-    <section class="grid"><article class="panel recommend"><h2>Analyst's read</h2><p>The market midpoint is ₹169 across 91 menu observations. 48% of listed dishes sit above that midpoint, suggesting room for a clear value tier before premium pricing.</p></article><article class="panel"><h2>Price architecture</h2><p class="sub">Share of validated dishes by customer-facing tier</p><div class="band"><div><strong>Entry</strong><span>17 dishes · 19%</span></div><div class="bar"><i style="width:19%"></i></div></div><div class="band"><div><strong>Core</strong><span>57 dishes · 63%</span></div><div class="bar"><i style="width:63%"></i></div></div><div class="band"><div><strong>Premium</strong><span>17 dishes · 19%</span></div><div class="bar"><i style="width:19%"></i></div></div></article></section>
-    <section class="grid"><article class="panel"><h2>Where the market clusters</h2><p class="sub">Restaurant footprint by Ahmedabad area</p><div class="table-wrap"><table><thead><tr><th>Area</th><th>Restaurants</th><th>Avg rating</th></tr></thead><tbody><tr><td>Vastrapur</td><td>6</td><td><span class="rating">4.4</span></td></tr><tr><td>Gota</td><td>3</td><td><span class="rating">4.2</span></td></tr><tr><td>Ahmedabad</td><td>1</td><td><span class="rating">4.8</span></td></tr><tr><td>Asarwa</td><td>1</td><td><span class="rating">4.3</span></td></tr><tr><td>Prahlad Nagar</td><td>1</td><td><span class="rating">4.3</span></td></tr><tr><td>Shahpur</td><td>1</td><td><span class="rating">4.3</span></td></tr></tbody></table></div></article><article class="panel"><h2>Signal to watch</h2><p class="sub">What is shaping this edition</p><p style="font-size:18px;line-height:1.45">The strongest competitive signal is not the highest price. It is a credible combination of rating, local presence and a menu that lands near the market midpoint.</p><p class="sub">Sources: kathiyawadi_seed_workbook</p><p class="sub">Maps and public menu connectors refresh automatically. Community observations are checked, then included in the next run.</p></article></section>
-    <section class="panel"><h2>Competitive set</h2><p class="sub">Highest-rated tracked operators, with review depth for context</p><div class="table-wrap"><table><thead><tr><th>Restaurant</th><th>Rating</th><th>Reviews</th><th>Price signal</th></tr></thead><tbody><tr><td><strong>Mr And Mrs Kathiyawadi</strong><small>Vastrapur</small></td><td><span class="rating">5.0</span></td><td>98</td><td>₹500 for two</td></tr><tr><td><strong>Damodar Kathiyawadi</strong><small>Vastrapur</small></td><td><span class="rating">4.9</span></td><td>29</td><td>₹300 for two</td></tr><tr><td><strong>Bajaro Kathiyawadi</strong><small>Ahmedabad</small></td><td><span class="rating">4.8</span></td><td>520</td><td>₹200for two</td></tr><tr><td><strong>Sorath Suddh Kathiyawadi Restaurant</strong><small>Gota</small></td><td><span class="rating">4.5</span></td><td>855</td><td>₹300 for two</td></tr><tr><td><strong>Special Kathiyawadi</strong><small>Vastrapur</small></td><td><span class="rating">4.5</span></td><td>27</td><td>₹300 for two</td></tr><tr><td><strong>Shree Marutinandan Kathiyawadi Restaurant</strong><small>Shahpur</small></td><td><span class="rating">4.3</span></td><td>202</td><td>₹400 for two</td></tr><tr><td><strong>Om Kathiyawadi Dhaba</strong><small>Prahlad Nagar</small></td><td><span class="rating">4.3</span></td><td>200</td><td>₹300 for two</td></tr><tr><td><strong>Maher Kathiyawadi</strong><small>Asarwa</small></td><td><span class="rating">4.3</span></td><td>89</td><td>₹450for two</td></tr></tbody></table></div></section>
-    <p class="footer">Updated by the live data pipeline · Coverage: Ahmedabad vegetarian / Kathiyawadi restaurants · Prices shown in INR · This view is directional market intelligence, not a consumer ranking.</p>
-  </main>
+
+<div class="container">
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="pulse-badge">
+      <span class="pulse-dot"></span>
+      <span>AHMEDABAD RESTAURANT MARKET PRICING · LIVE EDITION</span>
+    </div>
+    <div>Updated from Free OpenStreetMap Live Pipeline</div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h1>Kathiyawadi Dining,<br><em>mapped and priced.</em></h1>
+      <p class="hero-lead">
+        A real-time, spatial pricing intelligence desk tracking vegetarian Kathiyawadi dining, iconic Gujarati dhabas, and traditional thali benchmarks across Ahmedabad.
+      </p>
+    </div>
+    <div class="hero-callout">
+      <h3>Operator & Diner Intelligence</h3>
+      <p>Analyze area pricing saturation, discover authentic value leaders, and benchmark dish economics across Ahmedabad hubs.</p>
+      <a href="https://github.com/trambak001/data_restarant/issues/new?template=market-experience.yml" class="btn-action" target="_blank" rel="noopener">Share a Field Observation ↗</a>
+    </div>
+  </section>
+
+  <!-- Summary KPI Cards -->
+  <section class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Restaurants Tracked</div>
+      <div class="kpi-value">28</div>
+      <div class="kpi-sub">Across Ahmedabad map clusters</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Menu Observations</div>
+      <div class="kpi-value">223</div>
+      <div class="kpi-sub">Validated dish price points</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Market Midpoint</div>
+      <div class="kpi-value">₹169</div>
+      <div class="kpi-sub">Median price per dish</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Hubs Monitored</div>
+      <div class="kpi-value">20</div>
+      <div class="kpi-sub">Neighborhoods & sub-markets</div>
+    </div>
+  </section>
+
+  <!-- Spatial Intelligence (Leaflet OSM Map + Area Ranking) -->
+  <div class="section-title-wrap">
+    <h2 class="section-title">Spatial Market Footprint</h2>
+    <p class="section-subtitle">Explore live Kathiyawadi restaurants across Ahmedabad with exact GPS coordinates and ratings.</p>
+  </div>
+
+  <section class="map-section">
+    <div class="map-container">
+      <div class="map-header">
+        <span style="font-weight: 700; font-size: 14px;">📍 Interactive OpenStreetMap View</span>
+        <div class="map-filters" id="tierFilters">
+          <button class="filter-btn active" data-filter="all">All Locations</button>
+          <button class="filter-btn" data-filter="Value Champion">Value Champions</button>
+          <button class="filter-btn" data-filter="Premium Benchmark">Premium Benchmark</button>
+          <button class="filter-btn" data-filter="Budget Dhaba">Budget Dhabas</button>
+        </div>
+      </div>
+      <div id="map"></div>
+    </div>
+
+    <div class="map-sidebar">
+      <h3 style="font-family: 'Outfit'; font-size: 18px; margin-bottom: 4px;">Neighborhood Saturation</h3>
+      <p style="font-size: 12px; color: var(--muted); margin-bottom: 16px;">Ranked by tracked restaurant count and average rating.</p>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Area</th>
+              <th>Count</th>
+              <th>Rating</th>
+              <th>Price Signal</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr class="area-row" data-area="Vastrapur">
+          <td><strong>Vastrapur</strong></td>
+          <td><span class="badge badge-count">6</span></td>
+          <td><span class="rating-badge">★ 4.4</span></td>
+          <td>₹300 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Gota">
+          <td><strong>Gota</strong></td>
+          <td><span class="badge badge-count">3</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹300 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Ashram Road">
+          <td><strong>Ashram Road</strong></td>
+          <td><span class="badge badge-count">2</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹325 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Ahmedabad">
+          <td><strong>Ahmedabad</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.8</span></td>
+          <td>₹200 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Prahlad Nagar">
+          <td><strong>Prahlad Nagar</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.3</span></td>
+          <td>₹300 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Shahpur">
+          <td><strong>Shahpur</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.3</span></td>
+          <td>₹400 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Asarwa">
+          <td><strong>Asarwa</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.3</span></td>
+          <td>₹450 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Chandkheda">
+          <td><strong>Chandkheda</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹250 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Akhbar Nagar">
+          <td><strong>Akhbar Nagar</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹325 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="NH8C">
+          <td><strong>NH8C</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹325 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Navrangpura">
+          <td><strong>Navrangpura</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹325 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Odhav">
+          <td><strong>Odhav</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹325 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Shapath Tower Ground Floor Sarkhej Gandhi Nagar Highway, Near State Bank Of India, Thaltej">
+          <td><strong>Shapath Tower Ground Floor Sarkhej Gandhi Nagar Highway, Near State Bank Of India, Thaltej</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹325 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Shela">
+          <td><strong>Shela</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹325 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Isanpur">
+          <td><strong>Isanpur</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹325 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Naroda">
+          <td><strong>Naroda</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹325 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Nikol-Nava Naroda road">
+          <td><strong>Nikol-Nava Naroda road</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.2</span></td>
+          <td>₹325 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Naranpura">
+          <td><strong>Naranpura</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 4.1</span></td>
+          <td>₹500 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Bodakdev">
+          <td><strong>Bodakdev</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 3.8</span></td>
+          <td>₹150 for two</td>
+        </tr>
+        
+        <tr class="area-row" data-area="Ognaj">
+          <td><strong>Ognaj</strong></td>
+          <td><span class="badge badge-count">1</span></td>
+          <td><span class="rating-badge">★ 3.3</span></td>
+          <td>₹300 for two</td>
+        </tr>
+        
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Staple Dish Benchmark Cards -->
+  <div class="section-title-wrap">
+    <h2 class="section-title">Iconic Dish Economics</h2>
+    <p class="section-subtitle">Real market benchmarks for the core pillars of an authentic Kathiyawadi menu.</p>
+  </div>
+
+  <section class="dish-grid">
+    
+        <div class="dish-card">
+          <div class="dish-category">Full Meal</div>
+          <h3 class="dish-title">Kathiyawadi Thali</h3>
+          <p class="dish-desc">Curated spread with 2-3 sabzi, rotla, kadhi, khichdi & chaas</p>
+          <div class="dish-metrics">
+            <div class="metric-block">
+              <span class="m-label">Benchmark Median</span>
+              <span class="m-val highlight">₹180</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Market Spread</span>
+              <span class="m-val">₹142 – ₹220</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Data Points</span>
+              <span class="m-val">3</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="dish-card">
+          <div class="dish-category">Breads</div>
+          <h3 class="dish-title">Bajra Rotla</h3>
+          <p class="dish-desc">Traditional wood-fired millet flatbread with white butter</p>
+          <div class="dish-metrics">
+            <div class="metric-block">
+              <span class="m-label">Benchmark Median</span>
+              <span class="m-val highlight">₹65</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Market Spread</span>
+              <span class="m-val">₹60 – ₹109</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Data Points</span>
+              <span class="m-val">25</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="dish-card">
+          <div class="dish-category">Sabzi</div>
+          <h3 class="dish-title">Sev Tameta</h3>
+          <p class="dish-desc">Sweet-tangy tomato curry topped with crisp gram flour sev</p>
+          <div class="dish-metrics">
+            <div class="metric-block">
+              <span class="m-label">Benchmark Median</span>
+              <span class="m-val highlight">₹160</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Market Spread</span>
+              <span class="m-val">₹80 – ₹300</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Data Points</span>
+              <span class="m-val">11</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="dish-card">
+          <div class="dish-category">Signature</div>
+          <h3 class="dish-title">Ringan no Oro</h3>
+          <p class="dish-desc">Smoky roasted eggplant mash cooked with garlic & spices</p>
+          <div class="dish-metrics">
+            <div class="metric-block">
+              <span class="m-label">Benchmark Median</span>
+              <span class="m-val highlight">₹150</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Market Spread</span>
+              <span class="m-val">₹80 – ₹250</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Data Points</span>
+              <span class="m-val">12</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="dish-card">
+          <div class="dish-category">Comfort</div>
+          <h3 class="dish-title">Khichdi</h3>
+          <p class="dish-desc">Warm comforting rice and lentil mash paired with Gujarati kadhi</p>
+          <div class="dish-metrics">
+            <div class="metric-block">
+              <span class="m-label">Benchmark Median</span>
+              <span class="m-val highlight">₹157</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Market Spread</span>
+              <span class="m-val">₹90 – ₹210</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Data Points</span>
+              <span class="m-val">19</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="dish-card">
+          <div class="dish-category">Beverage</div>
+          <h3 class="dish-title">Chaas</h3>
+          <p class="dish-desc">Chilled cumin-spiced buttermilk, essential with Kathiyawadi dining</p>
+          <div class="dish-metrics">
+            <div class="metric-block">
+              <span class="m-label">Benchmark Median</span>
+              <span class="m-val highlight">₹150</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Market Spread</span>
+              <span class="m-val">₹80 – ₹250</span>
+            </div>
+            <div class="metric-block">
+              <span class="m-label">Data Points</span>
+              <span class="m-val">12</span>
+            </div>
+          </div>
+        </div>
+        
+  </section>
+
+  <!-- Price Architecture Distribution -->
+  <div style="background: var(--surface); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 24px; margin-bottom: 44px; box-shadow: var(--shadow-sm);">
+    <h3 style="font-family: 'Outfit'; font-size: 20px; margin-bottom: 4px;">Price Architecture & Menu Tiering</h3>
+    <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">Distribution of observed menu items across customer pricing bands.</p>
+    
+        <div class="band-item">
+          <div class="band-header">
+            <strong>Entry / Staples (Roti, Chaas)</strong>
+            <span>45 items · 20%</span>
+          </div>
+          <div class="band-track">
+            <div class="band-fill" style="width:20%; background:#2a9d8f"></div>
+          </div>
+        </div>
+        
+        <div class="band-item">
+          <div class="band-header">
+            <strong>Core Sabzi & Dal (Sev Tameta, Oro)</strong>
+            <span>87 items · 39%</span>
+          </div>
+          <div class="band-track">
+            <div class="band-fill" style="width:39%; background:#e76f51"></div>
+          </div>
+        </div>
+        
+        <div class="band-item">
+          <div class="band-header">
+            <strong>Thali & Specials (Full Meal)</strong>
+            <span>91 items · 41%</span>
+          </div>
+          <div class="band-track">
+            <div class="band-fill" style="width:41%; background:#d4973b"></div>
+          </div>
+        </div>
+        
+  </div>
+
+  <!-- Competitive Leaderboard & Value-For-Money Matrix -->
+  <section class="leaderboard-section">
+    <div class="leaderboard-controls">
+      <div>
+        <h3 style="font-family: 'Outfit'; font-size: 22px; font-weight: 700;">Competitive Intelligence & Value Leaderboard</h3>
+        <p style="font-size: 13px; color: var(--muted);">Algorithmic Value-for-Money (VFM) index balancing customer rating against price tier.</p>
+      </div>
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search restaurant or area...">
+    </div>
+
+    <div class="table-container" style="max-height: 520px;">
+      <table id="leaderboardTable">
+        <thead>
+          <tr>
+            <th>Restaurant & Location</th>
+            <th>Rating & Reviews</th>
+            <th>Price Signal</th>
+            <th>Value-for-Money (VFM) Rank</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        <tr class="rest-row" data-area="Vastrapur" data-tier="Budget Dhaba">
+          <td>
+            <strong>Rudu Kathiawad</strong>
+            <div class="rest-sub">Vastrapur · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 3.8</span> <small>(3300)</small></td>
+          <td>₹200 for two</td>
+          <td><span class="vfm-badge tier-budget">13.38 · Budget Dhaba</span></td>
+          <td><a href="https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Ahmedabad" data-tier="Value Champion">
+          <td>
+            <strong>Bajaro Kathiyawadi</strong>
+            <div class="rest-sub">Ahmedabad · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.8</span> <small>(520)</small></td>
+          <td>₹200for two</td>
+          <td><span class="vfm-badge tier-champion">13.08 · Value Champion</span></td>
+          <td><a href="https://www.justdial.com/Ahmedabad/Bajaro-Kathiyawadi-Restaurant-Ahmedabad/079PXX79-XX79-230914150619-R9I7_BZDET" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Gota" data-tier="Budget Dhaba">
+          <td>
+            <strong>Kismat Kathiyawadi</strong>
+            <div class="rest-sub">Gota · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.1</span> <small>(1219)</small></td>
+          <td>₹200for two</td>
+          <td><span class="vfm-badge tier-budget">12.67 · Budget Dhaba</span></td>
+          <td><a href="https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Gota" data-tier="Core Contender">
+          <td>
+            <strong>Khodal Kathiyawadi </strong>
+            <div class="rest-sub">Gota · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 3.9</span> <small>(3455)</small></td>
+          <td>₹200-400 for two</td>
+          <td><span class="vfm-badge tier-budget">9.2 · Core Contender</span></td>
+          <td><a href=" https://www.justdial.com/Ahmedabad/search?q=Khodal-Kathiyawadi-Gota&amp;stype=company_list" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Gota" data-tier="Value Champion">
+          <td>
+            <strong>Sorath Suddh Kathiyawadi Restaurant</strong>
+            <div class="rest-sub">Gota · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.5</span> <small>(855)</small></td>
+          <td>₹300 for two</td>
+          <td><span class="vfm-badge tier-champion">8.81 · Value Champion</span></td>
+          <td><a href="https://www.swiggy.com/city/ahmedabad/sorath-suddh-kathiyawadi-restaurant-gota-jagatpur-rest157685" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Chandkheda" data-tier="Value Champion">
+          <td>
+            <strong>Shree Chamunda Kathiyawadi Dhaba</strong>
+            <div class="rest-sub">Chandkheda · Dhaba</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(387)</small></td>
+          <td>₹250 for two</td>
+          <td><span class="vfm-badge tier-champion">8.73 · Value Champion</span></td>
+          <td><a href="https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Prahlad Nagar" data-tier="Value Champion">
+          <td>
+            <strong>Om Kathiyawadi Dhaba</strong>
+            <div class="rest-sub">Prahlad Nagar · Dhaba</div>
+          </td>
+          <td><span class="rating-badge">★ 4.3</span> <small>(200)</small></td>
+          <td>₹300 for two</td>
+          <td><span class="vfm-badge tier-champion">6.66 · Value Champion</span></td>
+          <td><a href="https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Bodakdev" data-tier="Budget Dhaba">
+          <td>
+            <strong>Gurudev Kathiyawadi </strong>
+            <div class="rest-sub">Bodakdev · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 3.8</span> <small>(9)</small></td>
+          <td>₹150 for two</td>
+          <td><span class="vfm-badge tier-budget">6.48 · Budget Dhaba</span></td>
+          <td><a href="https://www.zomato.com/ahmedabad/gurudev-kathiyawadi-restaurant-bodakdev" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Vastrapur" data-tier="Budget Dhaba">
+          <td>
+            <strong>Gir Kathiyawadi Restaurant</strong>
+            <div class="rest-sub">Vastrapur · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.1</span> <small>(66)</small></td>
+          <td>₹250 for two</td>
+          <td><span class="vfm-badge tier-budget">6.17 · Budget Dhaba</span></td>
+          <td><a href="https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Vastrapur" data-tier="Value Champion">
+          <td>
+            <strong>Damodar Kathiyawadi</strong>
+            <div class="rest-sub">Vastrapur · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.9</span> <small>(29)</small></td>
+          <td>₹300 for two</td>
+          <td><span class="vfm-badge tier-champion">5.2 · Value Champion</span></td>
+          <td><a href="https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Shahpur" data-tier="Premium Benchmark">
+          <td>
+            <strong>Shree Marutinandan Kathiyawadi Restaurant</strong>
+            <div class="rest-sub">Shahpur · Casual Dining</div>
+          </td>
+          <td><span class="rating-badge">★ 4.3</span> <small>(202)</small></td>
+          <td>₹400 for two</td>
+          <td><span class="vfm-badge tier-premium">5.0 · Premium Benchmark</span></td>
+          <td><a href="https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Vastrapur" data-tier="Value Champion">
+          <td>
+            <strong>Special Kathiyawadi</strong>
+            <div class="rest-sub">Vastrapur · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.5</span> <small>(27)</small></td>
+          <td>₹300 for two</td>
+          <td><span class="vfm-badge tier-champion">4.7 · Value Champion</span></td>
+          <td><a href="https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Akhbar Nagar" data-tier="Value Champion">
+          <td>
+            <strong>Vrundavan Restaurant;AKHBAR NAGAR CIRCLE</strong>
+            <div class="rest-sub">Akhbar Nagar · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(45)</small></td>
+          <td>₹250-400 for two</td>
+          <td><span class="vfm-badge tier-champion">4.5 · Value Champion</span></td>
+          <td><a href="https://www.openstreetmap.org/node/2477174077" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="NH8C" data-tier="Value Champion">
+          <td>
+            <strong>Ken&#x27;s Koffee Plus Plus</strong>
+            <div class="rest-sub">NH8C · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(45)</small></td>
+          <td>₹250-400 for two</td>
+          <td><span class="vfm-badge tier-champion">4.5 · Value Champion</span></td>
+          <td><a href="https://www.openstreetmap.org/node/2679948361" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Navrangpura" data-tier="Value Champion">
+          <td>
+            <strong>purohit</strong>
+            <div class="rest-sub">Navrangpura · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(45)</small></td>
+          <td>₹250-400 for two</td>
+          <td><span class="vfm-badge tier-champion">4.5 · Value Champion</span></td>
+          <td><a href="https://www.openstreetmap.org/node/3776238979" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Odhav" data-tier="Value Champion">
+          <td>
+            <strong>Hotel Purohit Por</strong>
+            <div class="rest-sub">Odhav · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(45)</small></td>
+          <td>₹250-400 for two</td>
+          <td><span class="vfm-badge tier-champion">4.5 · Value Champion</span></td>
+          <td><a href="https://www.openstreetmap.org/node/5177688241" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Ashram Road" data-tier="Value Champion">
+          <td>
+            <strong>Jai Jalaram Parontha House</strong>
+            <div class="rest-sub">Ashram Road · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(45)</small></td>
+          <td>₹250-400 for two</td>
+          <td><span class="vfm-badge tier-champion">4.5 · Value Champion</span></td>
+          <td><a href="https://www.openstreetmap.org/node/5527662483" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Ashram Road" data-tier="Value Champion">
+          <td>
+            <strong>Swati Snacks</strong>
+            <div class="rest-sub">Ashram Road · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(45)</small></td>
+          <td>₹250-400 for two</td>
+          <td><span class="vfm-badge tier-champion">4.5 · Value Champion</span></td>
+          <td><a href="https://www.openstreetmap.org/node/8548483880" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Shapath Tower Ground Floor Sarkhej Gandhi Nagar Highway, Near State Bank Of India, Thaltej" data-tier="Value Champion">
+          <td>
+            <strong>Gordhan Thal</strong>
+            <div class="rest-sub">Shapath Tower Ground Floor Sarkhej Gandhi Nagar Highway, Near State Bank Of India, Thaltej · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(45)</small></td>
+          <td>₹250-400 for two</td>
+          <td><span class="vfm-badge tier-champion">4.5 · Value Champion</span></td>
+          <td><a href="https://www.openstreetmap.org/node/9123477265" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Shela" data-tier="Value Champion">
+          <td>
+            <strong>Purohit Chavana and Sweet Mart</strong>
+            <div class="rest-sub">Shela · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(45)</small></td>
+          <td>₹250-400 for two</td>
+          <td><span class="vfm-badge tier-champion">4.5 · Value Champion</span></td>
+          <td><a href="https://www.openstreetmap.org/node/9310325493" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Isanpur" data-tier="Value Champion">
+          <td>
+            <strong>Sakha Surti Locho &amp; Rasawala Khaman</strong>
+            <div class="rest-sub">Isanpur · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(45)</small></td>
+          <td>₹250-400 for two</td>
+          <td><span class="vfm-badge tier-champion">4.5 · Value Champion</span></td>
+          <td><a href="https://www.openstreetmap.org/node/11539673209" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Naroda" data-tier="Value Champion">
+          <td>
+            <strong>Gujarat Hotel (Gujarat Dhaba) ગુજરાત હોટલ ગુજરાત ઢાબા</strong>
+            <div class="rest-sub">Naroda · Dhaba</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(45)</small></td>
+          <td>₹250-400 for two</td>
+          <td><span class="vfm-badge tier-champion">4.5 · Value Champion</span></td>
+          <td><a href="https://www.openstreetmap.org/node/14090334447" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Nikol-Nava Naroda road" data-tier="Value Champion">
+          <td>
+            <strong>Kathiyawadi</strong>
+            <div class="rest-sub">Nikol-Nava Naroda road · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.2</span> <small>(45)</small></td>
+          <td>₹250-400 for two</td>
+          <td><span class="vfm-badge tier-champion">4.5 · Value Champion</span></td>
+          <td><a href="https://www.openstreetmap.org/way/451514771" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Vastrapur" data-tier="Premium Benchmark">
+          <td>
+            <strong>Mr And Mrs Kathiyawadi</strong>
+            <div class="rest-sub">Vastrapur · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 5.0</span> <small>(98)</small></td>
+          <td>₹500 for two</td>
+          <td><span class="vfm-badge tier-premium">4.07 · Premium Benchmark</span></td>
+          <td><a href="https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Ognaj" data-tier="Core Contender">
+          <td>
+            <strong>Varudi Khodiyar Kathiyawadi</strong>
+            <div class="rest-sub">Ognaj · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 3.3</span> <small>(60)</small></td>
+          <td>₹300 for two</td>
+          <td><span class="vfm-badge tier-budget">4.06 · Core Contender</span></td>
+          <td><a href="https://www.zomato.com/ahmedabad/shree-varudi-khodiyar-gota" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Vastrapur" data-tier="Core Contender">
+          <td>
+            <strong>Kathyawadi Chatako</strong>
+            <div class="rest-sub">Vastrapur · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 3.9</span> <small>(386)</small></td>
+          <td>₹500 for two</td>
+          <td><span class="vfm-badge tier-budget">4.05 · Core Contender</span></td>
+          <td><a href="https://www.swiggy.com/city/ahmedabad/kathyawadi-chatako-vastrapur-rest570833" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Asarwa" data-tier="Premium Benchmark">
+          <td>
+            <strong>Maher Kathiyawadi</strong>
+            <div class="rest-sub">Asarwa · Pure Veg Restaurant</div>
+          </td>
+          <td><span class="rating-badge">★ 4.3</span> <small>(89)</small></td>
+          <td>₹450for two</td>
+          <td><span class="vfm-badge tier-premium">3.81 · Premium Benchmark</span></td>
+          <td><a href="https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        <tr class="rest-row" data-area="Naranpura" data-tier="Core Contender">
+          <td>
+            <strong>Shree Khodiyar Kathiyawadi Dhaba</strong>
+            <div class="rest-sub">Naranpura · Dhaba</div>
+          </td>
+          <td><span class="rating-badge">★ 4.1</span> <small>(11)</small></td>
+          <td>₹500 for two</td>
+          <td><span class="vfm-badge tier-budget">2.17 · Core Contender</span></td>
+          <td><a href="https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583" target="_blank" rel="noopener" class="src-link">Open ↗</a></td>
+        </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Methodology & Open Data Footer -->
+  <footer>
+    <p><strong>Open-Source Methodology & Free Maps Stack:</strong> This dataset is refreshed via a zero-cost automated data pipeline leveraging OpenStreetMap Overpass API, public community contributions, and algorithmic entity deduplication. Map rendered using 100% free Leaflet.js with CartoDB Voyager tiles. All prices in INR (₹). This view is directional market intelligence for business operators and enthusiasts.</p>
+  </footer>
+</div>
+
+<!-- Leaflet JS (100% Free OpenStreetMap) -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<script>
+  const restaurants = [{"id": "R0001", "name": "Shree Khodiyar Kathiyawadi Dhaba", "area": "Naranpura", "lat": 23.052, "lon": 72.553, "rating": 4.1, "reviews": 11, "price_range": "\u20b9500 for two", "est_price": 500.0, "cuisine": "Kathiyawadi", "type": "Dhaba", "source_url": "https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 2.17, "vfm_tier": "Core Contender"}, {"id": "R0002", "name": "Om Kathiyawadi Dhaba", "area": "Prahlad Nagar", "lat": 23.012, "lon": 72.51, "rating": 4.3, "reviews": 200, "price_range": "\u20b9300 for two", "est_price": 300.0, "cuisine": "Kathiyawadi", "type": "Dhaba", "source_url": "https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 6.66, "vfm_tier": "Value Champion"}, {"id": "R0003", "name": "Shree Chamunda Kathiyawadi Dhaba", "area": "Chandkheda", "lat": 23.111, "lon": 72.585, "rating": 4.2, "reviews": 387, "price_range": "\u20b9250 for two", "est_price": 250.0, "cuisine": "Kathiyawadi", "type": "Dhaba", "source_url": "https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 8.73, "vfm_tier": "Value Champion"}, {"id": "R0004", "name": "Shree Marutinandan Kathiyawadi Restaurant", "area": "Shahpur", "lat": 23.038, "lon": 72.58, "rating": 4.3, "reviews": 202, "price_range": "\u20b9400 for two", "est_price": 400.0, "cuisine": "Kathiyawadi", "type": "Casual Dining", "source_url": "https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 5.0, "vfm_tier": "Premium Benchmark"}, {"id": "R0005", "name": "Sorath Suddh Kathiyawadi Restaurant", "area": "Gota", "lat": 23.103, "lon": 72.535, "rating": 4.5, "reviews": 855, "price_range": "\u20b9300 for two", "est_price": 300.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.swiggy.com/city/ahmedabad/sorath-suddh-kathiyawadi-restaurant-gota-jagatpur-rest157685", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 8.81, "vfm_tier": "Value Champion"}, {"id": "R0006", "name": "Damodar Kathiyawadi", "area": "Vastrapur", "lat": 23.035, "lon": 72.528, "rating": 4.9, "reviews": 29, "price_range": "\u20b9300 for two", "est_price": 300.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 5.2, "vfm_tier": "Value Champion"}, {"id": "R0007", "name": "Gir Kathiyawadi Restaurant", "area": "Vastrapur", "lat": 23.035, "lon": 72.528, "rating": 4.1, "reviews": 66, "price_range": "\u20b9250 for two", "est_price": 250.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 6.17, "vfm_tier": "Budget Dhaba"}, {"id": "R0008", "name": "Kathyawadi Chatako", "area": "Vastrapur", "lat": 23.035, "lon": 72.528, "rating": 3.9, "reviews": 386, "price_range": "\u20b9500 for two", "est_price": 500.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.swiggy.com/city/ahmedabad/kathyawadi-chatako-vastrapur-rest570833", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 4.05, "vfm_tier": "Core Contender"}, {"id": "R0009", "name": "Mr And Mrs Kathiyawadi", "area": "Vastrapur", "lat": 23.035, "lon": 72.528, "rating": 5.0, "reviews": 98, "price_range": "\u20b9500 for two", "est_price": 500.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 4.07, "vfm_tier": "Premium Benchmark"}, {"id": "R0010", "name": "Rudu Kathiawad", "area": "Vastrapur", "lat": 23.035, "lon": 72.528, "rating": 3.8, "reviews": 3300, "price_range": "\u20b9200 for two", "est_price": 200.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 13.38, "vfm_tier": "Budget Dhaba"}, {"id": "R0011", "name": "Special Kathiyawadi", "area": "Vastrapur", "lat": 23.035, "lon": 72.528, "rating": 4.5, "reviews": 27, "price_range": "\u20b9300 for two", "est_price": 300.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 4.7, "vfm_tier": "Value Champion"}, {"id": "R0012", "name": "Khodal Kathiyawadi ", "area": "Gota", "lat": 23.103, "lon": 72.535, "rating": 3.9, "reviews": 3455, "price_range": "\u20b9200-400 for two", "est_price": 300.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": " https://www.justdial.com/Ahmedabad/search?q=Khodal-Kathiyawadi-Gota&stype=company_list", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 9.2, "vfm_tier": "Core Contender"}, {"id": "R0013", "name": "Varudi Khodiyar Kathiyawadi", "area": "Ognaj", "lat": 23.09, "lon": 72.502, "rating": 3.3, "reviews": 60, "price_range": "\u20b9300 for two", "est_price": 300.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.zomato.com/ahmedabad/shree-varudi-khodiyar-gota", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 4.06, "vfm_tier": "Core Contender"}, {"id": "R0014", "name": "Gurudev Kathiyawadi ", "area": "Bodakdev", "lat": 23.038, "lon": 72.518, "rating": 3.8, "reviews": 9, "price_range": "\u20b9150 for two", "est_price": 150.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.zomato.com/ahmedabad/gurudev-kathiyawadi-restaurant-bodakdev", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 6.48, "vfm_tier": "Budget Dhaba"}, {"id": "R0015", "name": "Bajaro Kathiyawadi", "area": "Ahmedabad", "lat": 23.0225, "lon": 72.5714, "rating": 4.8, "reviews": 520, "price_range": "\u20b9200for two", "est_price": 200.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.justdial.com/Ahmedabad/Bajaro-Kathiyawadi-Restaurant-Ahmedabad/079PXX79-XX79-230914150619-R9I7_BZDET", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 13.08, "vfm_tier": "Value Champion"}, {"id": "R0016", "name": "Maher Kathiyawadi", "area": "Asarwa", "lat": 23.048, "lon": 72.605, "rating": 4.3, "reviews": 89, "price_range": "\u20b9450for two", "est_price": 450.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 3.81, "vfm_tier": "Premium Benchmark"}, {"id": "R0017", "name": "Kismat Kathiyawadi", "area": "Gota", "lat": 23.103, "lon": 72.535, "rating": 4.1, "reviews": 1219, "price_range": "\u20b9200for two", "est_price": 200.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET", "source_system": "kathiyawadi_seed_workbook", "vfm_score": 12.67, "vfm_tier": "Budget Dhaba"}, {"id": "R0018", "name": "Vrundavan Restaurant;AKHBAR NAGAR CIRCLE", "area": "Akhbar Nagar", "lat": 23.0674245, "lon": 72.5645716, "rating": 4.2, "reviews": 45, "price_range": "\u20b9250-400 for two", "est_price": 325.0, "cuisine": "Punjabi,_SouthIndia,_Gujarati Thali.", "type": "Pure Veg Restaurant", "source_url": "https://www.openstreetmap.org/node/2477174077", "source_system": "openstreetmap_overpass", "vfm_score": 4.5, "vfm_tier": "Value Champion"}, {"id": "R0019", "name": "Ken's Koffee Plus Plus", "area": "NH8C", "lat": 23.1964319, "lon": 72.6328106, "rating": 4.2, "reviews": 45, "price_range": "\u20b9250-400 for two", "est_price": 325.0, "cuisine": "Gujarati", "type": "Pure Veg Restaurant", "source_url": "https://www.openstreetmap.org/node/2679948361", "source_system": "openstreetmap_overpass", "vfm_score": 4.5, "vfm_tier": "Value Champion"}, {"id": "R0020", "name": "purohit", "area": "Navrangpura", "lat": 23.0342345, "lon": 72.5610096, "rating": 4.2, "reviews": 45, "price_range": "\u20b9250-400 for two", "est_price": 325.0, "cuisine": "Gujarati / Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.openstreetmap.org/node/3776238979", "source_system": "openstreetmap_overpass", "vfm_score": 4.5, "vfm_tier": "Value Champion"}, {"id": "R0021", "name": "Hotel Purohit Por", "area": "Odhav", "lat": 22.9945198, "lon": 72.665834, "rating": 4.2, "reviews": 45, "price_range": "\u20b9250-400 for two", "est_price": 325.0, "cuisine": "indian", "type": "Pure Veg Restaurant", "source_url": "https://www.openstreetmap.org/node/5177688241", "source_system": "openstreetmap_overpass", "vfm_score": 4.5, "vfm_tier": "Value Champion"}, {"id": "R0022", "name": "Jai Jalaram Parontha House", "area": "Ashram Road", "lat": 23.0246356, "lon": 72.5714777, "rating": 4.2, "reviews": 45, "price_range": "\u20b9250-400 for two", "est_price": 325.0, "cuisine": "gujarati;kathiawari;punjabi", "type": "Pure Veg Restaurant", "source_url": "https://www.openstreetmap.org/node/5527662483", "source_system": "openstreetmap_overpass", "vfm_score": 4.5, "vfm_tier": "Value Champion"}, {"id": "R0023", "name": "Swati Snacks", "area": "Ashram Road", "lat": 23.0244466, "lon": 72.5589826, "rating": 4.2, "reviews": 45, "price_range": "\u20b9250-400 for two", "est_price": 325.0, "cuisine": "gujarati;regional", "type": "Pure Veg Restaurant", "source_url": "https://www.openstreetmap.org/node/8548483880", "source_system": "openstreetmap_overpass", "vfm_score": 4.5, "vfm_tier": "Value Champion"}, {"id": "R0024", "name": "Gordhan Thal", "area": "Shapath Tower Ground Floor Sarkhej Gandhi Nagar Highway, Near State Bank Of India, Thaltej", "lat": 23.0359596, "lon": 72.5111196, "rating": 4.2, "reviews": 45, "price_range": "\u20b9250-400 for two", "est_price": 325.0, "cuisine": "gujarati;regional;indian", "type": "Pure Veg Restaurant", "source_url": "https://www.openstreetmap.org/node/9123477265", "source_system": "openstreetmap_overpass", "vfm_score": 4.5, "vfm_tier": "Value Champion"}, {"id": "R0025", "name": "Purohit Chavana and Sweet Mart", "area": "Shela", "lat": 23.0182853, "lon": 72.4716006, "rating": 4.2, "reviews": 45, "price_range": "\u20b9250-400 for two", "est_price": 325.0, "cuisine": "Gujarati / Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.openstreetmap.org/node/9310325493", "source_system": "openstreetmap_overpass", "vfm_score": 4.5, "vfm_tier": "Value Champion"}, {"id": "R0026", "name": "Sakha Surti Locho & Rasawala Khaman", "area": "Isanpur", "lat": 22.9782788, "lon": 72.6106967, "rating": 4.2, "reviews": 45, "price_range": "\u20b9250-400 for two", "est_price": 325.0, "cuisine": "indian", "type": "Pure Veg Restaurant", "source_url": "https://www.openstreetmap.org/node/11539673209", "source_system": "openstreetmap_overpass", "vfm_score": 4.5, "vfm_tier": "Value Champion"}, {"id": "R0027", "name": "Gujarat Hotel (Gujarat Dhaba) \u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4 \u0ab9\u0acb\u0a9f\u0ab2 \u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4 \u0aa2\u0abe\u0aac\u0abe", "area": "Naroda", "lat": 23.1826079, "lon": 72.6829507, "rating": 4.2, "reviews": 45, "price_range": "\u20b9250-400 for two", "est_price": 325.0, "cuisine": "Gujarati / Kathiyawadi", "type": "Dhaba", "source_url": "https://www.openstreetmap.org/node/14090334447", "source_system": "openstreetmap_overpass", "vfm_score": 4.5, "vfm_tier": "Value Champion"}, {"id": "R0028", "name": "Kathiyawadi", "area": "Nikol-Nava Naroda road", "lat": 23.0581169, "lon": 72.6719773, "rating": 4.2, "reviews": 45, "price_range": "\u20b9250-400 for two", "est_price": 325.0, "cuisine": "Kathiyawadi", "type": "Pure Veg Restaurant", "source_url": "https://www.openstreetmap.org/way/451514771", "source_system": "openstreetmap_overpass", "vfm_score": 4.5, "vfm_tier": "Value Champion"}];
+
+  // Initialize Free Leaflet Map centered on Ahmedabad
+  const map = L.map('map', {
+    center: [23.038, 72.545],
+    zoom: 12,
+    scrollWheelZoom: false
+  });
+
+  // 100% Free OpenStreetMap CartoDB Tiles
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  }).addTo(map);
+
+  const markers = [];
+
+  function createCustomIcon(tier) {
+    let bg = '#df5d2f';
+    if (tier === 'Value Champion') bg = '#12382b';
+    if (tier === 'Premium Benchmark') bg = '#d4973b';
+
+    return L.divIcon({
+      className: 'custom-pin',
+      html: `<div style="
+        background: ${bg};
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 11px;
+        font-weight: bold;
+      ">★</div>`,
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
+    });
+  }
+
+  // Populate Markers
+  restaurants.forEach(r => {
+    if (!r.lat || !r.lon) return;
+
+    const marker = L.marker([r.lat, r.lon], {
+      icon: createCustomIcon(r.vfm_tier)
+    });
+
+    const popupHtml = `
+      <div style="font-family:'Plus Jakarta Sans', sans-serif; min-width: 210px;">
+        <h4 style="margin: 0 0 4px; font-size: 15px; color: #12382b;">${r.name}</h4>
+        <div style="font-size: 12px; color: #666; margin-bottom: 6px;">📍 ${r.area} · ${r.type}</div>
+        <div style="display:flex; justify-content:space-between; margin-bottom: 8px; font-size: 13px;">
+          <strong style="color: #e07a1f;">★ ${r.rating} (${r.reviews})</strong>
+          <span style="font-weight: 600; color: #333;">${r.price_range}</span>
+        </div>
+        <div style="margin-bottom: 8px;">
+          <span style="background:#e4f5eb; color:#1b663b; padding:2px 6px; border-radius:4px; font-size:11px; font-weight:600;">
+            ${r.vfm_tier}
+          </span>
+        </div>
+        ${r.source_url ? `<a href="${r.source_url}" target="_blank" rel="noopener" style="font-size: 12px; color: #12382b; font-weight: bold; text-decoration: none;">View Source / Directions ↗</a>` : ''}
+      </div>
+    `;
+
+    marker.bindPopup(popupHtml);
+    marker.restaurantData = r;
+    marker.addTo(map);
+    markers.push(marker);
+  });
+
+  // Filter Buttons Handler
+  const filterBtns = document.querySelectorAll('#tierFilters .filter-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      const bounds = [];
+      markers.forEach(m => {
+        const match = filter === 'all' || m.restaurantData.vfm_tier === filter;
+        if (match) {
+          m.addTo(map);
+          bounds.push(m.getLatLng());
+        } else {
+          map.removeLayer(m);
+        }
+      });
+
+      if (bounds.length > 0) {
+        map.fitBounds(L.latLngBounds(bounds), { padding: [30, 30] });
+      }
+    });
+  });
+
+  // Search Filter Handler for Table
+  const searchInput = document.getElementById('searchInput');
+  const tableRows = document.querySelectorAll('#leaderboardTable tbody .rest-row');
+
+  searchInput.addEventListener('input', (e) => {
+    const term = e.target.value.toLowerCase().trim();
+    tableRows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = text.includes(term) ? '' : 'none';
+    });
+  });
+</script>
+
 </body>
 </html>

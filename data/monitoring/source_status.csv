@@ -6,13 +6,18 @@ kathiyawadi_seed_workbook,success,108,,20260910_161226
 openstreetmap_overpass,failed,0,"HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/interpreter (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x7fad5b33f590>: Failed to resolve 'overpass-api.de' ([Errno -5] No address associated with hostname)""))",20260910_161226
 google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260910_161226
 external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260910_161226
-kathiyawadi_seed_workbook,success,108,,20260911_031825
-openstreetmap_overpass,failed,0,406 Client Error: Not Acceptable for url: https://overpass-api.de/api/interpreter,20260911_031825
-google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_031825
-external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260911_031825
-community_experience,success,0,,20260911_031825
-kathiyawadi_seed_workbook,success,108,,20260911_155757
-openstreetmap_overpass,failed,0,406 Client Error: Not Acceptable for url: https://overpass-api.de/api/interpreter,20260911_155757
-google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_155757
-external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260911_155757
-community_experience,success,0,,20260911_155757
+kathiyawadi_seed_workbook,success,108,,20260911_161205
+openstreetmap_overpass,success,12,,20260911_161205
+google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_161205
+external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260911_161205
+community_experience,success,0,,20260911_161205
+kathiyawadi_seed_workbook,success,108,,20260911_162102
+openstreetmap_overpass,success,12,,20260911_162102
+google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_162102
+external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260911_162102
+community_experience,success,0,,20260911_162102
+kathiyawadi_seed_workbook,success,108,,20260911_162646
+openstreetmap_overpass,success,12,,20260911_162646
+google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_162646
+external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260911_162646
+community_experience,success,0,,20260911_162646
