@@ -11,3 +11,8 @@ openstreetmap_overpass,failed,0,406 Client Error: Not Acceptable for url: https:
 google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_031825
 external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260911_031825
 community_experience,success,0,,20260911_031825
+kathiyawadi_seed_workbook,success,108,,20260911_155757
+openstreetmap_overpass,failed,0,406 Client Error: Not Acceptable for url: https://overpass-api.de/api/interpreter,20260911_155757
+google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_155757
+external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260911_155757
+community_experience,success,0,,20260911_155757
