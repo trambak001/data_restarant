@@ -100,7 +100,7 @@ def is_valid_ahmedabad_coord(lat: Any, lon: Any) -> bool:
     try:
         lat = float(lat)
         lon = float(lon)
-        return (22.8 <= lat <= 23.3) and (72.4 <= lon <= 72.8)
+        return (22.8 <= lat <= 23.42) and (72.35 <= lon <= 72.85)
     except (ValueError, TypeError):
         return True # Default to true if missing for other sources
 
@@ -140,6 +140,20 @@ AHMEDABAD_AREA_CENTROIDS: dict[str, tuple[float, float]] = {
     "vejalpur": (23.0080, 72.5210),
     "jodhpur": (23.0220, 72.5200),
     "shela": (23.0120, 72.4600),
+    "kudasan": (23.1720, 72.6310),
+    "infocity": (23.1910, 72.6340),
+    "sargasan": (23.1850, 72.6100),
+    "sector 11": (23.2230, 72.6500),
+    "sector 21": (23.2380, 72.6480),
+    "sector 16": (23.2320, 72.6550),
+    "sector 7": (23.2180, 72.6400),
+    "sector 28": (23.2620, 72.6580),
+    "pdpu road": (23.1580, 72.6540),
+    "raysan": (23.1580, 72.6540),
+    "koba": (23.1420, 72.6320),
+    "vavol": (23.2100, 72.6050),
+    "chiloda": (23.2600, 72.7500),
+    "gandhinagar": (23.2156, 72.6369),
     "ahmedabad": (23.0225, 72.5714),
 }
 
@@ -230,11 +244,11 @@ def fetch_osm_restaurants(timeout: int = 35) -> SourceResult:
     query = """
 [out:json][timeout:30];
 (
-  node["amenity"~"restaurant|fast_food|cafe"]["name"~"Kathiyawad|Kathiawad|Dhaba|Bhojanalay|Thali|Khodiyar|Chamunda|Marutinandan|Purohit|Surti|Saurashtra|Gordhan|Gopi|Patel|Jay Bhavani|Umiya",i](22.85,72.40,23.25,72.78);
-  way["amenity"~"restaurant|fast_food|cafe"]["name"~"Kathiyawad|Kathiawad|Dhaba|Bhojanalay|Thali|Khodiyar|Chamunda|Marutinandan|Purohit|Surti|Saurashtra|Gordhan|Gopi|Patel|Jay Bhavani|Umiya",i](22.85,72.40,23.25,72.78);
-  node["cuisine"~"kathiyawadi|gujarati",i](22.85,72.40,23.25,72.78);
-  way["cuisine"~"kathiyawadi|gujarati",i](22.85,72.40,23.25,72.78);
-  node["amenity"~"restaurant|fast_food"]["diet:vegetarian"="yes"]["name"~"Kathiyawad|Kathiawad|Dhaba|Thali",i](22.85,72.40,23.25,72.78);
+  node["amenity"~"restaurant|fast_food|cafe"]["name"~"Kathiyawad|Kathiawad|Dhaba|Bhojanalay|Thali|Khodiyar|Chamunda|Marutinandan|Purohit|Surti|Saurashtra|Gordhan|Gopi|Patel|Jay Bhavani|Umiya|Radhe|Tulsi|Toran|Sasumaa",i](22.85,72.35,23.40,72.82);
+  way["amenity"~"restaurant|fast_food|cafe"]["name"~"Kathiyawad|Kathiawad|Dhaba|Bhojanalay|Thali|Khodiyar|Chamunda|Marutinandan|Purohit|Surti|Saurashtra|Gordhan|Gopi|Patel|Jay Bhavani|Umiya|Radhe|Tulsi|Toran|Sasumaa",i](22.85,72.35,23.40,72.82);
+  node["cuisine"~"kathiyawadi|gujarati",i](22.85,72.35,23.40,72.82);
+  way["cuisine"~"kathiyawadi|gujarati",i](22.85,72.35,23.40,72.82);
+  node["amenity"~"restaurant|fast_food"]["diet:vegetarian"="yes"]["name"~"Kathiyawad|Kathiawad|Dhaba|Thali",i](22.85,72.35,23.40,72.82);
 );
 out center tags;
 """.strip()
@@ -414,23 +428,38 @@ def load_external_menu_file() -> SourceResult:
 
         restaurants = []
         menus = []
+        seen_restaurants: set[str] = set()
+
         for idx, row in df.iterrows():
-            rid = f"external_{idx}_{normalize_text(row['Restaurant_Name']).replace(' ', '_')}"
-            restaurants.append(
-                {
-                    "Restaurant_Name": row["Restaurant_Name"],
-                    "City": row.get("City", "Ahmedabad"),
-                    "Area": row.get("Area", "Ahmedabad"),
-                    "Restaurant_Type": row.get("Restaurant_Type", "Vegetarian"),
-                    "Cuisine": row.get("Cuisine", "Kathiyawadi"),
-                    "Restaurant_Rating": safe_float(row.get("Restaurant_Rating")),
-                    "Review_Count": safe_float(row.get("Review_Count")),
-                    "Price_Range": row.get("Price_Range", ""),
-                    "Source_URL": row.get("Source_URL", ""),
-                    "Source_Record_ID": rid,
-                    "Source_System": source_name,
-                }
-            )
+            rname = str(row["Restaurant_Name"]).strip()
+            area = str(row.get("Area", "Ahmedabad")).strip()
+            city = str(row.get("City", "Ahmedabad")).strip()
+            if any(g.lower() in area.lower() for g in ["kudasan", "infocity", "sargasan", "sector", "pdpu", "gandhinagar"]):
+                city = "Gandhinagar"
+
+            rid = f"external_{normalize_text(rname).replace(' ', '_')}"
+            lat, lon = geocode_area(area)
+
+            if rname not in seen_restaurants:
+                seen_restaurants.add(rname)
+                restaurants.append(
+                    {
+                        "Restaurant_Name": rname,
+                        "City": city,
+                        "Area": area,
+                        "Restaurant_Type": row.get("Restaurant_Type", "Vegetarian"),
+                        "Cuisine": row.get("Cuisine", "Kathiyawadi"),
+                        "Restaurant_Rating": safe_float(row.get("Restaurant_Rating")),
+                        "Review_Count": safe_float(row.get("Review_Count")),
+                        "Price_Range": row.get("Price_Range", ""),
+                        "Source_URL": row.get("Source_URL", ""),
+                        "Source_Record_ID": rid,
+                        "Source_System": source_name,
+                        "Latitude": lat,
+                        "Longitude": lon,
+                    }
+                )
+
             menus.append(
                 {
                     "Source_Record_ID": rid,

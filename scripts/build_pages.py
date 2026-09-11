@@ -98,9 +98,17 @@ def build() -> None:
         area_metrics[area]["ratings"].append(rating)
         area_metrics[area]["prices"].append(est_price)
 
+        city = str(row.get("City") or "").strip()
+        if not city or city == "nan":
+            if any(g in area.lower() for g in ["kudasan", "infocity", "sargasan", "sector", "pdpu", "gandhinagar"]):
+                city = "Gandhinagar"
+            else:
+                city = "Ahmedabad"
+
         map_restaurants.append({
             "id": str(row.get("Restaurant_ID", "")),
             "name": str(row.get("Restaurant_Name", "")),
+            "city": city,
             "area": area,
             "lat": lat,
             "lon": lon,
@@ -213,10 +221,10 @@ def build() -> None:
         )
         url_link = f'<a href="{html.escape(r["source_url"])}" target="_blank" rel="noopener" class="src-link">Open ↗</a>' if r["source_url"] else '-'
         leaderboard_html += f"""
-        <tr class="rest-row" data-area="{html.escape(r['area'])}" data-tier="{html.escape(r['vfm_tier'])}">
+        <tr class="rest-row" data-city="{html.escape(r['city'])}" data-area="{html.escape(r['area'])}" data-tier="{html.escape(r['vfm_tier'])}">
           <td>
             <strong>{html.escape(r['name'])}</strong>
-            <div class="rest-sub">{html.escape(r['area'])} · {html.escape(r['type'])}</div>
+            <div class="rest-sub"><span class="badge" style="background:#eef2eb; color:#12382b; font-size:10px; margin-right:4px;">{html.escape(r['city'])}</span>{html.escape(r['area'])} · {html.escape(r['type'])}</div>
           </td>
           <td><span class="rating-badge">★ {r['rating']}</span> <small>({r['reviews']})</small></td>
           <td>{html.escape(r['price_range'])}</td>
@@ -719,9 +727,9 @@ def build() -> None:
   <header class="topbar">
     <div class="pulse-badge">
       <span class="pulse-dot"></span>
-      <span>AHMEDABAD RESTAURANT MARKET PRICING · LIVE EDITION</span>
+      <span>AHMEDABAD & GANDHINAGAR RESTAURANT MARKET PRICING · LIVE EDITION</span>
     </div>
-    <div>Updated from Free OpenStreetMap Live Pipeline</div>
+    <div>Live Delivery (Swiggy/Zomato) & Free OpenStreetMap Pipeline</div>
   </header>
 
   <!-- Hero Section -->
@@ -729,12 +737,12 @@ def build() -> None:
     <div>
       <h1>Kathiyawadi Dining,<br><em>mapped and priced.</em></h1>
       <p class="hero-lead">
-        A real-time, spatial pricing intelligence desk tracking vegetarian Kathiyawadi dining, iconic Gujarati dhabas, and traditional thali benchmarks across Ahmedabad.
+        A real-time, spatial pricing intelligence desk tracking vegetarian Kathiyawadi dining, iconic Gujarati dhabas, online delivery menus (Swiggy & Zomato benchmarks), and traditional thali pricing across the <strong>Ahmedabad & Gandhinagar Twin Metro Region</strong>.
       </p>
     </div>
     <div class="hero-callout">
       <h3>Operator & Diner Intelligence</h3>
-      <p>Analyze area pricing saturation, discover authentic value leaders, and benchmark dish economics across Ahmedabad hubs.</p>
+      <p>Analyze area pricing saturation, discover authentic value leaders, and benchmark dish economics across Ahmedabad and Gandhinagar dining hubs.</p>
       <a href="{experience_url}" class="btn-action" target="_blank" rel="noopener">Share a Field Observation ↗</a>
     </div>
   </section>
@@ -772,12 +780,22 @@ def build() -> None:
   <section class="map-section">
     <div class="map-container">
       <div class="map-header">
-        <span style="font-weight: 700; font-size: 14px;">📍 Interactive OpenStreetMap View</span>
-        <div class="map-filters" id="tierFilters">
-          <button class="filter-btn active" data-filter="all">All Locations</button>
-          <button class="filter-btn" data-filter="Value Champion">Value Champions</button>
-          <button class="filter-btn" data-filter="Premium Benchmark">Premium Benchmark</button>
-          <button class="filter-btn" data-filter="Budget Dhaba">Budget Dhabas</button>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span style="font-weight: 700; font-size: 14px;">📍 Interactive Regional Map</span>
+          <span style="background:#e4f5eb; color:#1b663b; padding:3px 8px; border-radius:6px; font-size:11px; font-weight:700;">🌐 100% Free OpenStreetMap · Zero API Keys Needed</span>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <div class="map-filters" id="cityFilters">
+            <button class="filter-btn active" data-city="all">All Cities</button>
+            <button class="filter-btn" data-city="Ahmedabad">Ahmedabad</button>
+            <button class="filter-btn" data-city="Gandhinagar">Gandhinagar</button>
+          </div>
+          <div class="map-filters" id="tierFilters">
+            <button class="filter-btn active" data-filter="all">All Tiers</button>
+            <button class="filter-btn" data-filter="Value Champion">Value Champions</button>
+            <button class="filter-btn" data-filter="Premium Benchmark">Premium</button>
+            <button class="filter-btn" data-filter="Budget Dhaba">Budget</button>
+          </div>
         </div>
       </div>
       <div id="map"></div>
@@ -861,14 +879,14 @@ def build() -> None:
 <script>
   const restaurants = {map_json_data};
 
-  // Initialize Free Leaflet Map centered on Ahmedabad
+  // Initialize Free Leaflet Map centered on Ahmedabad & Gandhinagar
   const map = L.map('map', {{
-    center: [23.038, 72.545],
-    zoom: 12,
+    center: [23.10, 72.58],
+    zoom: 11,
     scrollWheelZoom: false
   }});
 
-  // 100% Free OpenStreetMap CartoDB Tiles
+  // 100% Free OpenStreetMap CartoDB Tiles (Zero API Key)
   L.tileLayer('https://{{s}}.basemaps.cartocdn.com/rastertiles/voyager/{{z}}/{{x}}/{{y}}{{r}}.png', {{
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
@@ -911,9 +929,9 @@ def build() -> None:
     }});
 
     const popupHtml = `
-      <div style="font-family:'Plus Jakarta Sans', sans-serif; min-width: 210px;">
+      <div style="font-family:'Plus Jakarta Sans', sans-serif; min-width: 220px;">
         <h4 style="margin: 0 0 4px; font-size: 15px; color: #12382b;">${{r.name}}</h4>
-        <div style="font-size: 12px; color: #666; margin-bottom: 6px;">📍 ${{r.area}} · ${{r.type}}</div>
+        <div style="font-size: 12px; color: #666; margin-bottom: 6px;">📍 ${{r.city}} (${{r.area}}) · ${{r.type}}</div>
         <div style="display:flex; justify-content:space-between; margin-bottom: 8px; font-size: 13px;">
           <strong style="color: #e07a1f;">★ ${{r.rating}} (${{r.reviews}})</strong>
           <span style="font-weight: 600; color: #333;">${{r.price_range}}</span>
@@ -923,7 +941,7 @@ def build() -> None:
             ${{r.vfm_tier}}
           </span>
         </div>
-        ${{r.source_url ? `<a href="${{r.source_url}}" target="_blank" rel="noopener" style="font-size: 12px; color: #12382b; font-weight: bold; text-decoration: none;">View Source / Directions ↗</a>` : ''}}
+        ${{r.source_url ? `<a href="${{r.source_url}}" target="_blank" rel="noopener" style="font-size: 12px; color: #12382b; font-weight: bold; text-decoration: none;">View on ${{r.source_system.includes('external') ? 'Delivery App' : 'Map'}} ↗</a>` : ''}}
       </div>
     `;
 
@@ -933,28 +951,56 @@ def build() -> None:
     markers.push(marker);
   }});
 
-  // Filter Buttons Handler
-  const filterBtns = document.querySelectorAll('#tierFilters .filter-btn');
-  filterBtns.forEach(btn => {{
-    btn.addEventListener('click', () => {{
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
+  let currentTier = 'all';
+  let currentCity = 'all';
 
-      const bounds = [];
-      markers.forEach(m => {{
-        const match = filter === 'all' || m.restaurantData.vfm_tier === filter;
-        if (match) {{
-          m.addTo(map);
-          bounds.push(m.getLatLng());
-        }} else {{
-          map.removeLayer(m);
-        }}
-      }});
-
-      if (bounds.length > 0) {{
-        map.fitBounds(L.latLngBounds(bounds), {{ padding: [30, 30] }});
+  function applyFilters() {{
+    const bounds = [];
+    markers.forEach(m => {{
+      const matchTier = currentTier === 'all' || m.restaurantData.vfm_tier === currentTier;
+      const matchCity = currentCity === 'all' || m.restaurantData.city.toLowerCase() === currentCity.toLowerCase();
+      
+      if (matchTier && matchCity) {{
+        m.addTo(map);
+        bounds.push(m.getLatLng());
+      }} else {{
+        map.removeLayer(m);
       }}
+    }});
+
+    if (bounds.length > 0) {{
+      map.fitBounds(L.latLngBounds(bounds), {{ padding: [30, 30] }});
+    }}
+
+    // Filter Table
+    tableRows.forEach(row => {{
+      const rCity = row.getAttribute('data-city');
+      const rTier = row.getAttribute('data-tier');
+      const matchCity = currentCity === 'all' || (rCity && rCity.toLowerCase() === currentCity.toLowerCase());
+      const matchTier = currentTier === 'all' || (rTier && rTier === currentTier);
+      row.style.display = (matchCity && matchTier) ? '' : 'none';
+    }});
+  }}
+
+  // City Filters
+  const cityBtns = document.querySelectorAll('#cityFilters .filter-btn');
+  cityBtns.forEach(btn => {{
+    btn.addEventListener('click', () => {{
+      cityBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCity = btn.getAttribute('data-city');
+      applyFilters();
+    }});
+  }});
+
+  // Tier Filters
+  const tierBtns = document.querySelectorAll('#tierFilters .filter-btn');
+  tierBtns.forEach(btn => {{
+    btn.addEventListener('click', () => {{
+      tierBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentTier = btn.getAttribute('data-filter');
+      applyFilters();
     }});
   }});
 
