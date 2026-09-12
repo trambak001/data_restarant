@@ -1,0 +1,43 @@
+Product_ID,Dish_Name,Food_Category,Sub_Category,Cuisine_Type,Cooking_Medium
+P001,Ringan Bharta,Sabzi,Ringan,Kathiyawadi,
+P002,Mix Green Veggies,Sabzi,Mix Veg,Kathiyawadi,
+P003,Bharela Dungri,Sabzi,Dungri,Kathiyawadi,
+P004,Lasaniya Bateta,Sabzi,Bateta,Kathiyawadi,
+P005,Plain Roti,Bread,Roti,Kathiyawadi,
+P006,Bajra Rotla,Bread,Rotla,Kathiyawadi,
+P007,Garlic Rotlo,Bread,Rotla,Kathiyawadi,
+P008,Gujarati Thali,Thali,Thali,Kathiyawadi,
+P009,Kathiyawadi Thali,Thali,Thali,Kathiyawadi,
+P010,Gujarati Dal Rice,Rice,Dal Rice,Kathiyawadi,
+P011,Sev Tameta,Sabzi,Sev,Kathiyawadi,
+P012,Dal Khichdi,Khichdi,Khichdi,Kathiyawadi,
+P013,Dal Fry,Dal,Dal,Kathiyawadi,
+P014,Dahi Tikhari,Sabzi,Dahi,Kathiyawadi,
+P015,Plain Khichdi,Khichdi,Khichdi,Kathiyawadi,
+P016,Palak Khichdi,Khichdi,Khichdi,Kathiyawadi,
+P017,Plain Rice,Rice,Rice,Kathiyawadi,
+P018,Jeera Rice,Rice,Rice,Kathiyawadi,
+P019,Kathiyawadi Pulao Kadhi,Rice,Rice,Kathiyawadi,
+P020,Bataka Suki Bhaji,Sabzi,Bateta,Kathiyawadi,
+P021,Bharela Ringan,Sabzi,Ringan,Kathiyawadi,
+P022,Dahi Bhindi,Sabzi,Bhindi,Kathiyawadi,
+P023,Kaju Gathiya,Sabzi,Kaju,Kathiyawadi,
+P024,Kaju Karela,Sabzi,Karela,Kathiyawadi,
+P025,Sev Lasuniya,Sabzi,Sev,Kathiyawadi,
+P026,Kathiyawadi Fix Thali,Thali,Thali,Kathiyawadi,
+P027,Rajwadi Kichadi,Sabzi,kichadi,Kathiyawadi,
+P028,Vagharelo Rotlo,Bread,Rotla,Kathiyawadi,
+P029,Bhakhri,Bread,Bhakhri,Kathiyawadi,
+P030,Khichdi Ghee,Khichdi,Khichdi,Kathiyawadi,Ghee
+P031,Thepla,Bread,Thepla,Kathiyawadi,Oil
+P032,Thepla Ghee,Bread,Thepla,Kathiyawadi,Ghee
+P033,Roti Ghee,Bread,Roti,Kathiyawadi,Ghee
+P034,Paratha Ghee,Bread,Paratha,Kathiyawadi,Ghee
+P035,Bajra Rotla Ghee,Bread,Rotla,Kathiyawadi,Ghee
+P036,Ringan no Odo,Sabzi,Ringan,Kathiyawadi,
+P037,Undhiyu,Sabzi,Mix Veg,Kathiyawadi,
+P038,Totha,Sabzi,Totha,Kathiyawadi,
+P039,Bharela Karela,Sabzi,Karela,Kathiyawadi,
+P040,Kadhi,Kadhi,Kadhi,Kathiyawadi,
+P041,Lasaniya Palak,Sabzi,Palak,Kathiyawadi,
+P042,Masala Khichdi,Khichdi,Khichdi,Kathiyawadi,

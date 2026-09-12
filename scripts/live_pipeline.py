@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import json
 import os
-from dataclasses import dataclass
+import time
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
@@ -16,10 +17,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 RAW_DIR = DATA_DIR / "raw"
 CURATED_LATEST_DIR = DATA_DIR / "curated" / "latest"
-CURATED_HISTORY_DIR = DATA_DIR / "curated" / "history"
 MONITORING_DIR = DATA_DIR / "monitoring"
 EXTERNAL_DIR = DATA_DIR / "external"
 
+# ── Schema constants ────────────────────────────────────────────────────────
 RESTAURANT_COLUMNS = [
     "Restaurant_ID",
     "Restaurant_Name",
@@ -64,6 +65,30 @@ FACT_COLUMNS = [
     "Price_Validation_Status",
 ]
 
+# Stable column schemas for monitoring CSVs — enforced on every write
+SOURCE_STATUS_COLS = [
+    "run_timestamp",
+    "source",
+    "status",
+    "record_count",
+    "latency_ms",
+    "is_fallback",
+    "error",
+]
+
+REFRESH_METRICS_COLS = [
+    "run_timestamp",
+    "pipeline_duration_ms",
+    "restaurant_count",
+    "product_count",
+    "fact_count",
+    "error_count",
+    "osm_record_count",
+    "google_record_count",
+    "seed_record_count",
+    "fallback_used",
+]
+
 
 @dataclass
 class SourceResult:
@@ -73,6 +98,8 @@ class SourceResult:
     error: str | None
     restaurants: list[dict[str, Any]]
     menus: list[dict[str, Any]]
+    latency_ms: float = field(default=0.0)
+    is_fallback: bool = field(default=False)
 
 
 def now_utc() -> datetime:
@@ -92,6 +119,31 @@ def normalize_text(value: Any) -> str:
     return " ".join(str(value or "").strip().lower().split())
 
 
+def normalize_area(value: Any) -> str:
+    """Title-case area name and strip common noise tokens."""
+    raw = str(value or "").strip()
+    noise = {"nr", "near", "opp", "opposite", "behind", "next", "to"}
+    words = raw.split()
+    cleaned = [w for w in words if w.lower() not in noise]
+    return " ".join(cleaned).title() if cleaned else "Ahmedabad"
+
+
+def normalize_cuisine(value: Any) -> str:
+    """Collapse cuisine variants into a canonical label."""
+    raw = normalize_text(value)
+    kathiyawadi_markers = {"kathiyawadi", "kathiawadi", "kathiawad", "kathiyawad"}
+    gujarati_markers = {"gujarati", "gujarati thali", "thali"}
+    for m in kathiyawadi_markers:
+        if m in raw:
+            return "Kathiyawadi"
+    for m in gujarati_markers:
+        if m in raw:
+            return "Gujarati"
+    if raw:
+        return " ".join(part.capitalize() for part in raw.split(";"))
+    return "Kathiyawadi"
+
+
 def similarity(a: str, b: str) -> float:
     return SequenceMatcher(None, normalize_text(a), normalize_text(b)).ratio() * 100
 
@@ -102,7 +154,7 @@ def is_valid_ahmedabad_coord(lat: Any, lon: Any) -> bool:
         lon = float(lon)
         return (22.8 <= lat <= 23.42) and (72.35 <= lon <= 72.85)
     except (ValueError, TypeError):
-        return True # Default to true if missing for other sources
+        return True  # Default to true if missing for other sources
 
 
 AHMEDABAD_AREA_CENTROIDS: dict[str, tuple[float, float]] = {
@@ -181,61 +233,82 @@ def infer_area_from_coords(lat: float | None, lon: float | None) -> str:
     return best_area
 
 
-def read_all_excel_sheets(path: Path) -> dict[str, pd.DataFrame]:
-    if not path.exists():
-        return {}
-    try:
-        sheets = pd.read_excel(path, sheet_name=None)
-        return {name: df for name, df in sheets.items()}
-    except Exception:
-        return {}
+# ── Error logging helper ────────────────────────────────────────────────────
 
+def log_error(timestamp: str, source: str, error: str, context: dict[str, Any] | None = None) -> None:
+    """Append a single error entry to the monitoring error log immediately."""
+    MONITORING_DIR.mkdir(parents=True, exist_ok=True)
+    entry: dict[str, Any] = {
+        "run_timestamp": timestamp,
+        "source": source,
+        "error": error,
+    }
+    if context:
+        entry.update(context)
+    error_path = MONITORING_DIR / "error_log.jsonl"
+    with error_path.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(entry, ensure_ascii=False, default=str) + "\n")
+
+
+# ── Seed CSV loaders (replaces direct Excel reads) ─────────────────────────
 
 def load_products() -> pd.DataFrame:
-    product_path = ROOT / "product.xlsx"
-    if product_path.exists():
+    """Load product dimension from seed CSV (fallback: empty frame)."""
+    seed_path = EXTERNAL_DIR / "seed_products.csv"
+    if seed_path.exists():
         try:
-            product_df = pd.read_excel(product_path)
-            if set(["Dish_Name"]).issubset(product_df.columns):
-                return product_df
+            df = pd.read_csv(seed_path)
+            if "Dish_Name" in df.columns:
+                return df
         except Exception:
             pass
     return pd.DataFrame(columns=PRODUCT_COLUMNS)
 
 
 def load_historical_prices() -> pd.DataFrame:
-    market_path = ROOT / "Kathiyawadi_Market_Data.xlsx"
-    sheets = read_all_excel_sheets(market_path)
-    fact_candidates: list[pd.DataFrame] = []
-    for _, df in sheets.items():
-        cols = {c.lower() for c in df.columns}
-        if "price" in cols and ("dish_name" in cols or "product_id" in cols):
-            fact_candidates.append(df)
-    if not fact_candidates:
+    """Load historical price benchmarks from seed fact CSV for fallback medians."""
+    fact_path = EXTERNAL_DIR / "seed_fact_menu_price.csv"
+    prod_path = EXTERNAL_DIR / "seed_products.csv"
+
+    if not fact_path.exists():
         return pd.DataFrame(columns=["Dish_Name", "Price"])
 
-    joined = pd.concat(fact_candidates, ignore_index=True)
-    if "Dish_Name" not in joined.columns and "Product_ID" in joined.columns:
-        products = load_products()
-        if "Product_ID" in products.columns and "Dish_Name" in products.columns:
-            joined = joined.merge(products[["Product_ID", "Dish_Name"]], on="Product_ID", how="left")
+    try:
+        fact_df = pd.read_csv(fact_path)
+        prod_df = pd.read_csv(prod_path) if prod_path.exists() else pd.DataFrame(columns=["Product_ID", "Dish_Name"])
 
-    if "Dish_Name" not in joined.columns:
+        cols = {c.lower() for c in fact_df.columns}
+        if "price" not in cols:
+            return pd.DataFrame(columns=["Dish_Name", "Price"])
+
+        if "Dish_Name" not in fact_df.columns and "Product_ID" in fact_df.columns and "Dish_Name" in prod_df.columns:
+            fact_df = fact_df.merge(prod_df[["Product_ID", "Dish_Name"]], on="Product_ID", how="left")
+
+        if "Dish_Name" not in fact_df.columns:
+            return pd.DataFrame(columns=["Dish_Name", "Price"])
+
+        fact_df["Price"] = fact_df["Price"].apply(safe_float)
+        fact_df = fact_df.dropna(subset=["Dish_Name", "Price"])
+        if fact_df.empty:
+            return pd.DataFrame(columns=["Dish_Name", "Price"])
+
+        return (
+            fact_df.groupby("Dish_Name", as_index=False)["Price"]
+            .median()
+            .rename(columns={"Price": "Median_Price"})
+        )
+    except Exception:
         return pd.DataFrame(columns=["Dish_Name", "Price"])
 
-    joined["Price"] = joined["Price"].apply(safe_float)
-    joined = joined.dropna(subset=["Dish_Name", "Price"])
-    if joined.empty:
-        return pd.DataFrame(columns=["Dish_Name", "Price"])
 
-    return (
-        joined.groupby("Dish_Name", as_index=False)["Price"]
-        .median()
-        .rename(columns={"Price": "Median_Price"})
-    )
+# ── Source fetchers ─────────────────────────────────────────────────────────
+
+def _backoff_sleep(attempt: int) -> None:
+    """Exponential backoff: 2 s, 4 s, 8 s …"""
+    time.sleep(2 ** (attempt + 1))
 
 
-def fetch_osm_restaurants(timeout: int = 35) -> SourceResult:
+def fetch_osm_restaurants(run_timestamp: str, timeout: int = 35) -> SourceResult:
     mirrors = [
         "https://overpass-api.de/api/interpreter",
         "https://overpass.kumi.systems/api/interpreter",
@@ -255,19 +328,31 @@ out center tags;
     source_name = "openstreetmap_overpass"
     headers = {"User-Agent": "KathiyawadiPricingIntelligence/1.0 (AhmedabadResearch)"}
 
+    t_start = time.perf_counter()
     payload: dict[str, Any] = {}
     last_error: str | None = None
 
     for endpoint in mirrors:
-        try:
-            response = requests.post(endpoint, data={"data": query}, headers=headers, timeout=timeout)
-            if response.status_code == 200:
-                payload = response.json()
-                break
-            else:
-                last_error = f"{endpoint} returned status {response.status_code}"
-        except Exception as exc:
-            last_error = str(exc)
+        for attempt in range(3):
+            try:
+                response = requests.post(
+                    endpoint, data={"data": query}, headers=headers, timeout=timeout
+                )
+                if response.status_code == 200:
+                    payload = response.json()
+                    break
+                else:
+                    last_error = f"{endpoint} returned status {response.status_code}"
+                    log_error(run_timestamp, source_name, last_error, {"endpoint": endpoint, "attempt": attempt})
+            except Exception as exc:
+                last_error = str(exc)
+                log_error(run_timestamp, source_name, last_error, {"endpoint": endpoint, "attempt": attempt})
+                if attempt < 2:
+                    _backoff_sleep(attempt)
+        if payload:
+            break
+
+    latency_ms = (time.perf_counter() - t_start) * 1000
 
     if not payload:
         return SourceResult(
@@ -277,6 +362,7 @@ out center tags;
             error=last_error,
             restaurants=[],
             menus=[],
+            latency_ms=latency_ms,
         )
 
     elements = payload.get("elements", [])
@@ -294,17 +380,19 @@ out center tags;
         if not is_valid_ahmedabad_coord(lat, lon):
             continue
 
-        area = tags.get("addr:suburb") or tags.get("addr:neighbourhood") or tags.get("addr:street")
-        if not area or area.lower() == "ahmedabad":
-            area = infer_area_from_coords(lat, lon)
+        raw_area = tags.get("addr:suburb") or tags.get("addr:neighbourhood") or tags.get("addr:street")
+        area = normalize_area(raw_area) if raw_area and raw_area.lower() != "ahmedabad" else infer_area_from_coords(lat, lon)
 
-        cuisine = tags.get("cuisine") or ("Kathiyawadi" if "kathiawa" in name.lower() or "kathiyawa" in name.lower() else "Gujarati / Kathiyawadi")
-        
+        cuisine_raw = tags.get("cuisine") or (
+            "Kathiyawadi" if "kathiawa" in name.lower() or "kathiyawa" in name.lower() else "Gujarati / Kathiyawadi"
+        )
+        cuisine = normalize_cuisine(cuisine_raw)
+
         restaurants.append(
             {
                 "Restaurant_Name": name.strip(),
                 "City": "Ahmedabad",
-                "Area": area.strip(),
+                "Area": area,
                 "Restaurant_Type": "Dhaba" if "dhaba" in name.lower() else "Pure Veg Restaurant",
                 "Cuisine": cuisine,
                 "Restaurant_Rating": 4.2,  # Standard baseline for verified active OSM community listings
@@ -325,13 +413,18 @@ out center tags;
         error=None,
         restaurants=restaurants,
         menus=[],
+        latency_ms=latency_ms,
     )
 
 
-def fetch_google_places(timeout: int = 40) -> SourceResult:
+def fetch_google_places(run_timestamp: str, timeout: int = 40) -> SourceResult:
     api_key = os.getenv("GOOGLE_PLACES_API_KEY")
     source_name = "google_places"
+    t_start = time.perf_counter()
+
     if not api_key:
+        log_error(run_timestamp, source_name, "GOOGLE_PLACES_API_KEY is not set")
+        latency_ms = (time.perf_counter() - t_start) * 1000
         return SourceResult(
             name=source_name,
             status="skipped",
@@ -339,28 +432,30 @@ def fetch_google_places(timeout: int = 40) -> SourceResult:
             error="GOOGLE_PLACES_API_KEY is not set",
             restaurants=[],
             menus=[],
+            latency_ms=latency_ms,
         )
 
     url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
     query = "vegetarian kathiyawadi restaurant in Ahmedabad"
     restaurants: list[dict[str, Any]] = []
+    last_error: str | None = None
 
     try:
         token: str | None = None
-        for _ in range(3):
-            params = {"key": api_key, "query": query}
-            if token:
-                params = {"key": api_key, "pagetoken": token}
-            response = requests.get(url, params=params, timeout=timeout)
-            response.raise_for_status()
-            payload = response.json()
+        for page in range(3):
+            try:
+                params = {"key": api_key, "query": query}
+                if token:
+                    params = {"key": api_key, "pagetoken": token}
+                response = requests.get(url, params=params, timeout=timeout)
+                response.raise_for_status()
+                payload = response.json()
 
-            for item in payload.get("results", []):
-                restaurants.append(
-                    {
+                for item in payload.get("results", []):
+                    candidate = {
                         "Restaurant_Name": item.get("name"),
                         "City": "Ahmedabad",
-                        "Area": (item.get("formatted_address") or "Ahmedabad").split(",")[0],
+                        "Area": normalize_area((item.get("formatted_address") or "Ahmedabad").split(",")[0]),
                         "Restaurant_Type": "Vegetarian",
                         "Cuisine": "Kathiyawadi",
                         "Restaurant_Rating": item.get("rating"),
@@ -372,37 +467,49 @@ def fetch_google_places(timeout: int = 40) -> SourceResult:
                         "Latitude": item.get("geometry", {}).get("location", {}).get("lat"),
                         "Longitude": item.get("geometry", {}).get("location", {}).get("lng"),
                     }
-                )
-                if not is_valid_ahmedabad_coord(restaurants[-1]["Latitude"], restaurants[-1]["Longitude"]):
-                    restaurants.pop()
+                    if is_valid_ahmedabad_coord(candidate["Latitude"], candidate["Longitude"]):
+                        restaurants.append(candidate)
 
-            token = payload.get("next_page_token")
-            if not token:
-                break
+                token = payload.get("next_page_token")
+                if not token:
+                    break
+            except Exception as exc:
+                last_error = str(exc)
+                log_error(run_timestamp, source_name, last_error, {"page": page})
+                break  # partial commit — return what we have so far
 
+        latency_ms = (time.perf_counter() - t_start) * 1000
         return SourceResult(
             name=source_name,
-            status="success",
+            status="success" if restaurants else ("failed" if last_error else "skipped"),
             record_count=len(restaurants),
-            error=None,
+            error=last_error,
             restaurants=restaurants,
             menus=[],
+            latency_ms=latency_ms,
         )
     except Exception as exc:
+        latency_ms = (time.perf_counter() - t_start) * 1000
+        err = str(exc)
+        log_error(run_timestamp, source_name, err)
         return SourceResult(
             name=source_name,
             status="failed",
             record_count=0,
-            error=str(exc),
+            error=err,
             restaurants=[],
             menus=[],
+            latency_ms=latency_ms,
         )
 
 
 def load_external_menu_file() -> SourceResult:
     source_name = "external_menu_csv"
     csv_path = EXTERNAL_DIR / "menu_prices.csv"
+    t_start = time.perf_counter()
+
     if not csv_path.exists():
+        latency_ms = (time.perf_counter() - t_start) * 1000
         return SourceResult(
             name=source_name,
             status="skipped",
@@ -410,6 +517,7 @@ def load_external_menu_file() -> SourceResult:
             error="data/external/menu_prices.csv not found",
             restaurants=[],
             menus=[],
+            latency_ms=latency_ms,
         )
 
     try:
@@ -417,6 +525,7 @@ def load_external_menu_file() -> SourceResult:
         required = {"Restaurant_Name", "Dish_Name", "Price", "Area", "Source_URL"}
         missing = sorted(required - set(df.columns))
         if missing:
+            latency_ms = (time.perf_counter() - t_start) * 1000
             return SourceResult(
                 name=source_name,
                 status="failed",
@@ -424,17 +533,19 @@ def load_external_menu_file() -> SourceResult:
                 error=f"Missing columns: {', '.join(missing)}",
                 restaurants=[],
                 menus=[],
+                latency_ms=latency_ms,
             )
 
         restaurants = []
         menus = []
         seen_restaurants: set[str] = set()
 
-        for idx, row in df.iterrows():
+        for _, row in df.iterrows():
             rname = str(row["Restaurant_Name"]).strip()
-            area = str(row.get("Area", "Ahmedabad")).strip()
+            raw_area = str(row.get("Area", "Ahmedabad")).strip()
+            area = normalize_area(raw_area)
             city = str(row.get("City", "Ahmedabad")).strip()
-            if any(g.lower() in area.lower() for g in ["kudasan", "infocity", "sargasan", "sector", "pdpu", "gandhinagar"]):
+            if any(g.lower() in area.lower() for g in ["Kudasan", "Infocity", "Sargasan", "Sector", "Pdpu", "Gandhinagar"]):
                 city = "Gandhinagar"
 
             rid = f"external_{normalize_text(rname).replace(' ', '_')}"
@@ -448,7 +559,7 @@ def load_external_menu_file() -> SourceResult:
                         "City": city,
                         "Area": area,
                         "Restaurant_Type": row.get("Restaurant_Type", "Vegetarian"),
-                        "Cuisine": row.get("Cuisine", "Kathiyawadi"),
+                        "Cuisine": normalize_cuisine(row.get("Cuisine", "Kathiyawadi")),
                         "Restaurant_Rating": safe_float(row.get("Restaurant_Rating")),
                         "Review_Count": safe_float(row.get("Review_Count")),
                         "Price_Range": row.get("Price_Range", ""),
@@ -473,6 +584,7 @@ def load_external_menu_file() -> SourceResult:
                 }
             )
 
+        latency_ms = (time.perf_counter() - t_start) * 1000
         return SourceResult(
             name=source_name,
             status="success",
@@ -480,8 +592,10 @@ def load_external_menu_file() -> SourceResult:
             error=None,
             restaurants=restaurants,
             menus=menus,
+            latency_ms=latency_ms,
         )
     except Exception as exc:
+        latency_ms = (time.perf_counter() - t_start) * 1000
         return SourceResult(
             name=source_name,
             status="failed",
@@ -489,13 +603,17 @@ def load_external_menu_file() -> SourceResult:
             error=str(exc),
             restaurants=[],
             menus=[],
+            latency_ms=latency_ms,
         )
 
 
 def load_experience_submissions() -> SourceResult:
     source_name = "community_experience"
     csv_path = EXTERNAL_DIR / "experience_submissions.csv"
+    t_start = time.perf_counter()
+
     if not csv_path.exists():
+        latency_ms = (time.perf_counter() - t_start) * 1000
         return SourceResult(
             name=source_name,
             status="skipped",
@@ -503,6 +621,7 @@ def load_experience_submissions() -> SourceResult:
             error="data/external/experience_submissions.csv not found",
             restaurants=[],
             menus=[],
+            latency_ms=latency_ms,
         )
 
     try:
@@ -513,12 +632,12 @@ def load_experience_submissions() -> SourceResult:
             if str(row.get("Status", "")).lower() not in {"validated", "pending_review"}:
                 continue
             name = str(row.get("Restaurant_Name", "")).strip()
-            area = str(row.get("Area", "Ahmedabad")).strip() or "Ahmedabad"
+            area = normalize_area(str(row.get("Area", "Ahmedabad")).strip() or "Ahmedabad")
             if not name:
                 continue
             issue_number = str(row.get("Issue_Number", "")).strip()
             source_url = str(row.get("Source_URL", "")).strip() or (
-                f"https://github.com/trambak001/data_restarant/issues/{issue_number}"
+                f"https://github.com/trambak001/data_restaurant/issues/{issue_number}"
                 if issue_number else ""
             )
             restaurants.append(
@@ -552,6 +671,7 @@ def load_experience_submissions() -> SourceResult:
                     }
                 )
 
+        latency_ms = (time.perf_counter() - t_start) * 1000
         return SourceResult(
             name=source_name,
             status="success",
@@ -559,8 +679,10 @@ def load_experience_submissions() -> SourceResult:
             error=None,
             restaurants=restaurants,
             menus=menus,
+            latency_ms=latency_ms,
         )
     except Exception as exc:
+        latency_ms = (time.perf_counter() - t_start) * 1000
         return SourceResult(
             name=source_name,
             status="failed",
@@ -568,27 +690,38 @@ def load_experience_submissions() -> SourceResult:
             error=str(exc),
             restaurants=[],
             menus=[],
+            latency_ms=latency_ms,
         )
 
 
 def load_local_seed_source() -> SourceResult:
+    """Load seed restaurants and menus from tracked CSV files (converted from Excel)."""
     source_name = "kathiyawadi_seed_workbook"
-    market_path = ROOT / "Kathiyawadi_Market_Data.xlsx"
-    product_path = ROOT / "product.xlsx"
-    if not market_path.exists():
+    rest_path = EXTERNAL_DIR / "seed_restaurants.csv"
+    fact_path = EXTERNAL_DIR / "seed_fact_menu_price.csv"
+    prod_path = EXTERNAL_DIR / "seed_products.csv"
+    t_start = time.perf_counter()
+
+    if not rest_path.exists():
+        latency_ms = (time.perf_counter() - t_start) * 1000
         return SourceResult(
             name=source_name,
             status="skipped",
             record_count=0,
-            error="Kathiyawadi_Market_Data.xlsx not found",
+            error="data/external/seed_restaurants.csv not found",
             restaurants=[],
             menus=[],
+            latency_ms=latency_ms,
         )
 
     try:
-        rest_df = pd.read_excel(market_path, sheet_name="Restaurant")
-        fact_df = pd.read_excel(market_path, sheet_name="Fact_Menu_Price")
-        prod_df = pd.read_excel(product_path) if product_path.exists() else pd.DataFrame(columns=["Product_ID", "Dish_Name"])
+        rest_df = pd.read_csv(rest_path)
+        fact_df = pd.read_csv(fact_path) if fact_path.exists() else pd.DataFrame()
+        prod_df = (
+            pd.read_csv(prod_path)
+            if prod_path.exists()
+            else pd.DataFrame(columns=["Product_ID", "Dish_Name"])
+        )
         if "Dish_Name" not in prod_df.columns:
             prod_df["Dish_Name"] = ""
         if "Product_ID" not in prod_df.columns:
@@ -597,7 +730,7 @@ def load_local_seed_source() -> SourceResult:
         restaurants = []
         for idx, row in rest_df.iterrows():
             src_id = f"seed_{row.get('Restaurant_ID', idx + 1)}"
-            area = row.get("Area", "Ahmedabad")
+            area = normalize_area(row.get("Area", "Ahmedabad"))
             lat, lon = geocode_area(area)
             restaurants.append(
                 {
@@ -605,7 +738,7 @@ def load_local_seed_source() -> SourceResult:
                     "City": row.get("City", "Ahmedabad"),
                     "Area": area,
                     "Restaurant_Type": row.get("Restaurant_Type", "Vegetarian"),
-                    "Cuisine": row.get("Cuisine", "Kathiyawadi"),
+                    "Cuisine": normalize_cuisine(row.get("Cuisine", "Kathiyawadi")),
                     "Restaurant_Rating": safe_float(row.get("Restaurant_Rating")),
                     "Review_Count": safe_float(row.get("Review_Count")),
                     "Price_Range": row.get("Price_Range", ""),
@@ -640,6 +773,7 @@ def load_local_seed_source() -> SourceResult:
                 }
             )
 
+        latency_ms = (time.perf_counter() - t_start) * 1000
         return SourceResult(
             name=source_name,
             status="success",
@@ -647,8 +781,10 @@ def load_local_seed_source() -> SourceResult:
             error=None,
             restaurants=restaurants,
             menus=menus,
+            latency_ms=latency_ms,
         )
     except Exception as exc:
+        latency_ms = (time.perf_counter() - t_start) * 1000
         return SourceResult(
             name=source_name,
             status="failed",
@@ -656,17 +792,20 @@ def load_local_seed_source() -> SourceResult:
             error=str(exc),
             restaurants=[],
             menus=[],
+            latency_ms=latency_ms,
         )
 
 
+# ── Deduplication & normalization ───────────────────────────────────────────
+
 def deduplicate_restaurants(restaurants: pd.DataFrame) -> pd.DataFrame:
     canonical: list[dict[str, Any]] = []
-    seen_source_ids = {}
-    
+    seen_source_ids: dict[str, int] = {}
+
     for record in restaurants.to_dict("records"):
         matched_index = None
         confidence = 100.0
-        
+
         src_id = record.get("Source_Record_ID")
         if src_id and src_id in seen_source_ids:
             matched_index = seen_source_ids[src_id]
@@ -711,7 +850,6 @@ def deduplicate_restaurants(restaurants: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-
 def standardize_dish_name(name: str) -> str:
     n = normalize_text(name)
     mapping = {
@@ -738,6 +876,13 @@ def build_products(product_seed: pd.DataFrame, menu_df: pd.DataFrame) -> pd.Data
     inferred = []
     for dish in sorted(set(menu_df.get("Dish_Name", []))):
         normalized = standardize_dish_name(dish)
+        # Fuzzy dedup: skip if similar to an existing seed entry (similarity >= 85)
+        already_in_seeds = any(
+            similarity(normalized, str(s.get("Dish_Name", ""))) >= 85
+            for s in seeds
+        )
+        if already_in_seeds:
+            continue
         inferred.append(
             {
                 "Product_ID": "",
@@ -761,7 +906,7 @@ def build_products(product_seed: pd.DataFrame, menu_df: pd.DataFrame) -> pd.Data
 
 def fallback_menu_from_medians(restaurants_df: pd.DataFrame, medians: pd.DataFrame) -> pd.DataFrame:
     if restaurants_df.empty or medians.empty:
-        return pd.DataFrame(columns=["Restaurant_ID", "Dish_Name", "Price", "Source_URL", "Source_System", "Price_Date"]) 
+        return pd.DataFrame(columns=["Restaurant_ID", "Dish_Name", "Price", "Source_URL", "Source_System", "Price_Date"])
 
     rows: list[dict[str, Any]] = []
     for _, rest in restaurants_df.iterrows():
@@ -799,19 +944,19 @@ def quality_filter_prices(fact_df: pd.DataFrame) -> pd.DataFrame:
     valid_mask = fact_df["Price_Validation_Status"] == "ok"
     if valid_mask.any() and "Dish_Name" in fact_df.columns:
         valid_df = fact_df[valid_mask]
-        
+
         q1 = valid_df.groupby("Dish_Name")["Price"].transform(lambda x: x.quantile(0.25))
         q3 = valid_df.groupby("Dish_Name")["Price"].transform(lambda x: x.quantile(0.75))
         iqr = q3 - q1
         low = q1 - (1.5 * iqr)
         high = q3 + (1.5 * iqr)
-        
+
         outlier_mask = valid_mask & ((fact_df["Price"] < low) | (fact_df["Price"] > high))
-        
+
         # Only tag outliers if there are enough samples per dish
         counts = valid_df.groupby("Dish_Name")["Price"].transform("count")
         outlier_mask = outlier_mask & (counts >= 5)
-        
+
         fact_df.loc[outlier_mask, "Price_Validation_Status"] = "iqr_outlier"
     elif valid_mask.any():
         valid_prices = fact_df.loc[valid_mask, "Price"]
@@ -826,88 +971,118 @@ def quality_filter_prices(fact_df: pd.DataFrame) -> pd.DataFrame:
     return fact_df[fact_df["Price_Validation_Status"].isin(["ok", "iqr_outlier"])].reset_index(drop=True)
 
 
+# ── Directory setup ─────────────────────────────────────────────────────────
+
 def ensure_dirs() -> None:
-    for d in [RAW_DIR, CURATED_LATEST_DIR, CURATED_HISTORY_DIR, MONITORING_DIR, EXTERNAL_DIR]:
+    # Note: RAW_DIR and CURATED_HISTORY_DIR are intentionally excluded — they
+    # are now gitignored write-only directories; only latest/ is committed.
+    for d in [CURATED_LATEST_DIR, MONITORING_DIR, EXTERNAL_DIR]:
         d.mkdir(parents=True, exist_ok=True)
 
 
-def write_source_snapshots(timestamp: str, sources: list[SourceResult]) -> None:
-    run_dir = RAW_DIR / timestamp
-    run_dir.mkdir(parents=True, exist_ok=True)
-    for src in sources:
-        path = run_dir / f"{src.name}.json"
-        payload = {
-            "name": src.name,
-            "status": src.status,
-            "record_count": src.record_count,
-            "error": src.error,
-            "restaurants": src.restaurants,
-            "menus": src.menus,
-        }
-        path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, default=str), encoding="utf-8")
+# ── Monitoring & output ─────────────────────────────────────────────────────
 
-
-def append_monitoring(timestamp: str, source_rows: list[dict[str, Any]], row_count: dict[str, int], errors: list[dict[str, Any]]) -> None:
+def append_monitoring(
+    timestamp: str,
+    source_rows: list[dict[str, Any]],
+    row_count: dict[str, int],
+    errors: list[dict[str, Any]],
+    pipeline_duration_ms: float,
+    fallback_used: bool,
+) -> None:
+    # --- source_status.csv ---
     source_status_path = MONITORING_DIR / "source_status.csv"
-    source_df = pd.DataFrame(source_rows)
-    source_df["run_timestamp"] = timestamp
+    new_source_df = pd.DataFrame(source_rows)
+    new_source_df["run_timestamp"] = timestamp
+    # Enforce stable column order, filling missing cols with empty string
+    for col in SOURCE_STATUS_COLS:
+        if col not in new_source_df.columns:
+            new_source_df[col] = ""
+    new_source_df = new_source_df[SOURCE_STATUS_COLS]
 
     if source_status_path.exists():
         prev = pd.read_csv(source_status_path)
-        source_df = pd.concat([prev, source_df], ignore_index=True)
-    source_df.to_csv(source_status_path, index=False)
+        for col in SOURCE_STATUS_COLS:
+            if col not in prev.columns:
+                prev[col] = ""
+        prev = prev[SOURCE_STATUS_COLS]
+        combined_source = pd.concat([prev, new_source_df], ignore_index=True)
+    else:
+        combined_source = new_source_df
+    combined_source.to_csv(source_status_path, index=False)
 
-    metrics = {
+    # --- refresh_metrics.csv ---
+    osm_count = next((r["record_count"] for r in source_rows if r["source"] == "openstreetmap_overpass"), 0)
+    google_count = next((r["record_count"] for r in source_rows if r["source"] == "google_places"), 0)
+    seed_count = next((r["record_count"] for r in source_rows if r["source"] == "kathiyawadi_seed_workbook"), 0)
+
+    metrics: dict[str, Any] = {
         "run_timestamp": timestamp,
+        "pipeline_duration_ms": round(pipeline_duration_ms, 1),
         "restaurant_count": row_count.get("restaurant", 0),
         "product_count": row_count.get("product", 0),
         "fact_count": row_count.get("fact", 0),
         "error_count": len(errors),
+        "osm_record_count": osm_count,
+        "google_record_count": google_count,
+        "seed_record_count": seed_count,
+        "fallback_used": fallback_used,
     }
 
     metrics_path = MONITORING_DIR / "refresh_metrics.csv"
-    metrics_df = pd.DataFrame([metrics])
+    new_metrics_df = pd.DataFrame([metrics])
+    for col in REFRESH_METRICS_COLS:
+        if col not in new_metrics_df.columns:
+            new_metrics_df[col] = ""
+    new_metrics_df = new_metrics_df[REFRESH_METRICS_COLS]
+
     if metrics_path.exists():
         prev = pd.read_csv(metrics_path)
-        metrics_df = pd.concat([prev, metrics_df], ignore_index=True)
-    metrics_df.to_csv(metrics_path, index=False)
+        for col in REFRESH_METRICS_COLS:
+            if col not in prev.columns:
+                prev[col] = ""
+        prev = prev[REFRESH_METRICS_COLS]
+        combined_metrics = pd.concat([prev, new_metrics_df], ignore_index=True)
+    else:
+        combined_metrics = new_metrics_df
+    combined_metrics.to_csv(metrics_path, index=False)
 
+    # --- error_log.jsonl: flush any source-level errors (failed + skipped with messages) ---
     if errors:
         error_path = MONITORING_DIR / "error_log.jsonl"
         with error_path.open("a", encoding="utf-8") as f:
             for error in errors:
-                f.write(json.dumps(error, ensure_ascii=False) + "\n")
+                f.write(json.dumps(error, ensure_ascii=False, default=str) + "\n")
 
 
-def save_curated(timestamp: str, restaurant_df: pd.DataFrame, product_df: pd.DataFrame, fact_df: pd.DataFrame) -> None:
-    history_dir = CURATED_HISTORY_DIR / timestamp
-    history_dir.mkdir(parents=True, exist_ok=True)
+def save_curated(restaurant_df: pd.DataFrame, product_df: pd.DataFrame, fact_df: pd.DataFrame) -> None:
+    """Write curated tables to data/curated/latest/ only — no history directories."""
+    CURATED_LATEST_DIR.mkdir(parents=True, exist_ok=True)
+    restaurant_df[RESTAURANT_COLUMNS].to_csv(CURATED_LATEST_DIR / "Restaurant.csv", index=False)
+    product_df[PRODUCT_COLUMNS].to_csv(CURATED_LATEST_DIR / "Product.csv", index=False)
+    fact_df[FACT_COLUMNS].to_csv(CURATED_LATEST_DIR / "Fact_Menu_Price.csv", index=False)
 
-    for out_dir in [CURATED_LATEST_DIR, history_dir]:
-        restaurant_df[RESTAURANT_COLUMNS].to_csv(out_dir / "Restaurant.csv", index=False)
-        product_df[PRODUCT_COLUMNS].to_csv(out_dir / "Product.csv", index=False)
-        fact_df[FACT_COLUMNS].to_csv(out_dir / "Fact_Menu_Price.csv", index=False)
 
+# ── Main pipeline ───────────────────────────────────────────────────────────
 
 def run_pipeline() -> None:
     ensure_dirs()
+    pipeline_start = time.perf_counter()
     run_time = now_utc()
     timestamp = run_time.strftime("%Y%m%d_%H%M%S")
 
     source_results = [
         load_local_seed_source(),
-        fetch_osm_restaurants(),
-        fetch_google_places(),
+        fetch_osm_restaurants(timestamp),
+        fetch_google_places(timestamp),
         load_external_menu_file(),
         load_experience_submissions(),
     ]
 
-    write_source_snapshots(timestamp, source_results)
-
-    source_rows = []
-    errors = []
-    restaurant_rows = []
-    menu_rows = []
+    source_rows: list[dict[str, Any]] = []
+    errors: list[dict[str, Any]] = []
+    restaurant_rows: list[dict[str, Any]] = []
+    menu_rows: list[dict[str, Any]] = []
 
     for src in source_results:
         source_rows.append(
@@ -915,11 +1090,16 @@ def run_pipeline() -> None:
                 "source": src.name,
                 "status": src.status,
                 "record_count": src.record_count,
+                "latency_ms": round(src.latency_ms, 1),
+                "is_fallback": src.is_fallback,
                 "error": src.error or "",
             }
         )
         if src.status == "failed":
             errors.append({"run_timestamp": timestamp, "source": src.name, "error": src.error})
+        # Also record skipped-with-error entries so they appear in the error log
+        elif src.status == "skipped" and src.error:
+            errors.append({"run_timestamp": timestamp, "source": src.name, "error": src.error, "type": "skipped"})
 
         restaurant_rows.extend(src.restaurants)
         menu_rows.extend(src.menus)
@@ -945,14 +1125,20 @@ def run_pipeline() -> None:
         menu_df = menu_df.merge(mapper, on="Source_Record_ID", how="left")
 
     historical_medians = load_historical_prices()
+    fallback_used = False
     if menu_df.empty:
         menu_df = fallback_menu_from_medians(deduped_restaurants, historical_medians)
+        fallback_used = not menu_df.empty
     else:
         covered_ids = set(menu_df["Restaurant_ID"].dropna())
         uncovered_rests = deduped_restaurants[~deduped_restaurants["Restaurant_ID"].isin(covered_ids)]
         if not uncovered_rests.empty and not historical_medians.empty:
             fallback_df = fallback_menu_from_medians(uncovered_rests, historical_medians)
-            menu_df = pd.concat([menu_df, fallback_df], ignore_index=True)
+            menu_df = pd.concat(
+                [menu_df.dropna(axis=1, how="all"), fallback_df.dropna(axis=1, how="all")],
+                ignore_index=True,
+            )
+            fallback_used = True
 
     product_seed = load_products()
     products_df = build_products(product_seed, menu_df)
@@ -1005,8 +1191,11 @@ def run_pipeline() -> None:
         "product": len(products_df),
         "fact": len(fact_df),
     }
-    save_curated(timestamp, deduped_restaurants, products_df, fact_df)
-    append_monitoring(timestamp, source_rows, row_counts, errors)
+
+    save_curated(deduped_restaurants, products_df, fact_df)
+
+    pipeline_duration_ms = (time.perf_counter() - pipeline_start) * 1000
+    append_monitoring(timestamp, source_rows, row_counts, errors, pipeline_duration_ms, fallback_used)
 
     print(json.dumps({"status": "ok", "timestamp": timestamp, "counts": row_counts}, indent=2))
 

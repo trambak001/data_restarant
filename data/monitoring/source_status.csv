@@ -1,38 +1,38 @@
-source,status,record_count,error,run_timestamp
-openstreetmap_overpass,failed,0,"HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/interpreter (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x7f30b0f036b0>: Failed to resolve 'overpass-api.de' ([Errno -5] No address associated with hostname)""))",20260910_161137
-google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260910_161137
-external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260910_161137
-kathiyawadi_seed_workbook,success,108,,20260910_161226
-openstreetmap_overpass,failed,0,"HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/interpreter (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x7fad5b33f590>: Failed to resolve 'overpass-api.de' ([Errno -5] No address associated with hostname)""))",20260910_161226
-google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260910_161226
-external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260910_161226
-kathiyawadi_seed_workbook,success,108,,20260911_161205
-openstreetmap_overpass,success,12,,20260911_161205
-google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_161205
-external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260911_161205
-community_experience,success,0,,20260911_161205
-kathiyawadi_seed_workbook,success,108,,20260911_162102
-openstreetmap_overpass,success,12,,20260911_162102
-google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_162102
-external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260911_162102
-community_experience,success,0,,20260911_162102
-kathiyawadi_seed_workbook,success,108,,20260911_162646
-openstreetmap_overpass,success,12,,20260911_162646
-google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_162646
-external_menu_csv,skipped,0,data/external/menu_prices.csv not found,20260911_162646
-community_experience,success,0,,20260911_162646
-kathiyawadi_seed_workbook,success,108,,20260911_164534
-openstreetmap_overpass,success,14,,20260911_164534
-google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_164534
-external_menu_csv,success,33,,20260911_164534
-community_experience,success,0,,20260911_164534
-kathiyawadi_seed_workbook,success,108,,20260912_032352
-openstreetmap_overpass,success,14,,20260912_032352
-google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260912_032352
-external_menu_csv,success,33,,20260912_032352
-community_experience,success,0,,20260912_032352
-kathiyawadi_seed_workbook,success,108,,20260912_150642
-openstreetmap_overpass,success,14,,20260912_150642
-google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260912_150642
-external_menu_csv,success,33,,20260912_150642
-community_experience,success,0,,20260912_150642
+run_timestamp,source,status,record_count,latency_ms,is_fallback,error
+20260910_161137,openstreetmap_overpass,failed,0,,,"HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/interpreter (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x7f30b0f036b0>: Failed to resolve 'overpass-api.de' ([Errno -5] No address associated with hostname)""))"
+20260910_161137,google_places,skipped,0,,,GOOGLE_PLACES_API_KEY is not set
+20260910_161137,external_menu_csv,skipped,0,,,data/external/menu_prices.csv not found
+20260910_161226,kathiyawadi_seed_workbook,success,108,,,
+20260910_161226,openstreetmap_overpass,failed,0,,,"HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/interpreter (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x7fad5b33f590>: Failed to resolve 'overpass-api.de' ([Errno -5] No address associated with hostname)""))"
+20260910_161226,google_places,skipped,0,,,GOOGLE_PLACES_API_KEY is not set
+20260910_161226,external_menu_csv,skipped,0,,,data/external/menu_prices.csv not found
+20260911_161205,kathiyawadi_seed_workbook,success,108,,,
+20260911_161205,openstreetmap_overpass,success,12,,,
+20260911_161205,google_places,skipped,0,,,GOOGLE_PLACES_API_KEY is not set
+20260911_161205,external_menu_csv,skipped,0,,,data/external/menu_prices.csv not found
+20260911_161205,community_experience,success,0,,,
+20260911_162102,kathiyawadi_seed_workbook,success,108,,,
+20260911_162102,openstreetmap_overpass,success,12,,,
+20260911_162102,google_places,skipped,0,,,GOOGLE_PLACES_API_KEY is not set
+20260911_162102,external_menu_csv,skipped,0,,,data/external/menu_prices.csv not found
+20260911_162102,community_experience,success,0,,,
+20260911_162646,kathiyawadi_seed_workbook,success,108,,,
+20260911_162646,openstreetmap_overpass,success,12,,,
+20260911_162646,google_places,skipped,0,,,GOOGLE_PLACES_API_KEY is not set
+20260911_162646,external_menu_csv,skipped,0,,,data/external/menu_prices.csv not found
+20260911_162646,community_experience,success,0,,,
+20260911_164534,kathiyawadi_seed_workbook,success,108,,,
+20260911_164534,openstreetmap_overpass,success,14,,,
+20260911_164534,google_places,skipped,0,,,GOOGLE_PLACES_API_KEY is not set
+20260911_164534,external_menu_csv,success,33,,,
+20260911_164534,community_experience,success,0,,,
+20260912_164129,kathiyawadi_seed_workbook,success,108,28.9,False,
+20260912_164129,openstreetmap_overpass,success,14,17449.3,False,
+20260912_164129,google_places,skipped,0,0.6,False,GOOGLE_PLACES_API_KEY is not set
+20260912_164129,external_menu_csv,success,33,7.1,False,
+20260912_164129,community_experience,success,0,2.6,False,
+20260912_164329,kathiyawadi_seed_workbook,success,108,17.0,False,
+20260912_164329,openstreetmap_overpass,success,14,3132.2,False,
+20260912_164329,google_places,skipped,0,0.7,False,GOOGLE_PLACES_API_KEY is not set
+20260912_164329,external_menu_csv,success,33,4.5,False,
+20260912_164329,community_experience,success,0,2.3,False,

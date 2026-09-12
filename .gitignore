@@ -1,0 +1,35 @@
+# ── Binary / large workbook files ────────────────────────────────────────────
+*.pbix
+*.xlsx
+*.xls
+
+# ── Python artefacts ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtualenvs ───────────────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Pipeline run-time directories (write-only; not committed) ─────────────────
+# Raw per-run snapshots (timestamped sub-directories)
+data/raw/
+# Curated history snapshots (timestamped sub-directories)
+data/curated/history/
+
+# ── OS / editor noise ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.code-workspace

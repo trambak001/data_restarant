@@ -1,8 +1,0 @@
-{
-  "name": "openstreetmap_overpass",
-  "status": "failed",
-  "record_count": 0,
-  "error": "406 Client Error: Not Acceptable for url: https://overpass-api.de/api/interpreter",
-  "restaurants": [],
-  "menus": []
-}

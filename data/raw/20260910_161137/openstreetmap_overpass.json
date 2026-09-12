@@ -1,8 +1,0 @@
-{
-  "name": "openstreetmap_overpass",
-  "status": "failed",
-  "record_count": 0,
-  "error": "HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/interpreter (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f30b0f036b0>: Failed to resolve 'overpass-api.de' ([Errno -5] No address associated with hostname)\"))",
-  "restaurants": [],
-  "menus": []
-}

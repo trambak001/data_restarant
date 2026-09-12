@@ -1,0 +1,18 @@
+Restaurant_ID,Restaurant_Name,City,Area,Restaurant_Type,Cuisine,Restaurant_Rating,Review_Count,Price_Range,Source_URL
+R001,Shree Khodiyar Kathiyawadi Dhaba,Ahmedabad,Naranpura,Dhaba,Kathiyawadi,4.1,11,₹500 for two,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583
+R002,Om Kathiyawadi Dhaba,Ahmedabad,Prahlad Nagar,Dhaba,Kathiyawadi,4.3,200,₹300 for two,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578
+R003,Shree Chamunda Kathiyawadi Dhaba,Ahmedabad,Chandkheda,Dhaba,Kathiyawadi,4.2,387,₹250 for two,https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917
+R004,Shree Marutinandan Kathiyawadi Restaurant,Ahmedabad,Shahpur,Casual Dining,Kathiyawadi,4.3,202,₹400 for two,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611
+R005,Sorath Suddh Kathiyawadi Restaurant,Ahmedabad,Gota,Pure Veg Restaurant,Kathiyawadi,4.5,855,₹300 for two,https://www.swiggy.com/city/ahmedabad/sorath-suddh-kathiyawadi-restaurant-gota-jagatpur-rest157685
+R006,Damodar Kathiyawadi,Ahmedabad,Vastrapur,Pure Veg Restaurant,Kathiyawadi,4.9,29,₹300 for two,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681
+R007,Gir Kathiyawadi Restaurant,Ahmedabad,Vastrapur,Pure Veg Restaurant,Kathiyawadi,4.1,66,₹250 for two,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553
+R008,Kathyawadi Chatako,Ahmedabad,Vastrapur,Pure Veg Restaurant,Kathiyawadi,3.9,386,₹500 for two,https://www.swiggy.com/city/ahmedabad/kathyawadi-chatako-vastrapur-rest570833
+R009,Mr And Mrs Kathiyawadi,Ahmedabad,Vastrapur,Pure Veg Restaurant,Kathiyawadi,5.0,98,₹500 for two,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742
+R010,Rudu Kathiawad,Ahmedabad,Vastrapur,Pure Veg Restaurant,Kathiyawadi,3.8,3300,₹200 for two,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672
+R011,Special Kathiyawadi,Ahmedabad,Vastrapur,Pure Veg Restaurant,Kathiyawadi,4.5,27,₹300 for two,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021
+R012,Khodal Kathiyawadi ,Ahmedabad,Gota,Pure Veg Restaurant,Kathiyawadi,3.9,3455,₹200-400 for two, https://www.justdial.com/Ahmedabad/search?q=Khodal-Kathiyawadi-Gota&stype=company_list
+R013,Varudi Khodiyar Kathiyawadi,Ahmedabad,Ognaj,Pure Veg Restaurant,Kathiyawadi,3.3,60,₹300 for two,https://www.zomato.com/ahmedabad/shree-varudi-khodiyar-gota
+R014,Gurudev Kathiyawadi ,Ahmedabad,Bodakdev,Pure Veg Restaurant,Kathiyawadi,3.8,9,₹150 for two,https://www.zomato.com/ahmedabad/gurudev-kathiyawadi-restaurant-bodakdev
+R015,Bajaro Kathiyawadi,Ahmedabad,Ahmedabad,Pure Veg Restaurant,Kathiyawadi,4.8,520,₹200for two,https://www.justdial.com/Ahmedabad/Bajaro-Kathiyawadi-Restaurant-Ahmedabad/079PXX79-XX79-230914150619-R9I7_BZDET
+R016,Maher Kathiyawadi,Ahmedabad,Asarwa,Pure Veg Restaurant,Kathiyawadi,4.3,89,₹450for two,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu
+R017,Kismat Kathiyawadi,Ahmedabad,Gota,Pure Veg Restaurant,Kathiyawadi,4.1,1219,₹200for two,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET
