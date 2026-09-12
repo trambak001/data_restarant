@@ -26,3 +26,8 @@ openstreetmap_overpass,success,14,,20260911_164534
 google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260911_164534
 external_menu_csv,success,33,,20260911_164534
 community_experience,success,0,,20260911_164534
+kathiyawadi_seed_workbook,success,108,,20260912_032352
+openstreetmap_overpass,success,14,,20260912_032352
+google_places,skipped,0,GOOGLE_PLACES_API_KEY is not set,20260912_032352
+external_menu_csv,success,33,,20260912_032352
+community_experience,success,0,,20260912_032352

@@ -1,0 +1,8 @@
+{
+  "name": "google_places",
+  "status": "skipped",
+  "record_count": 0,
+  "error": "GOOGLE_PLACES_API_KEY is not set",
+  "restaurants": [],
+  "menus": []
+}
