@@ -19,3 +19,6 @@
 {"run_timestamp": "20260912_171202", "source": "openstreetmap_overpass", "error": "HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=35)", "endpoint": "https://overpass.kumi.systems/api/interpreter", "attempt": 2}
 {"run_timestamp": "20260913_032928", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
 {"run_timestamp": "20260913_032928", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
+{"run_timestamp": "20260913_154233", "source": "openstreetmap_overpass", "error": "https://overpass-api.de/api/interpreter returned status 504", "endpoint": "https://overpass-api.de/api/interpreter", "attempt": 0}
+{"run_timestamp": "20260913_154233", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
+{"run_timestamp": "20260913_154233", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
