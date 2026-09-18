@@ -1,281 +1,281 @@
 Menu_Price_ID,Restaurant_ID,Product_ID,Price,Portion_Size,Serving_Unit,Dish_rating,Menu_Type,Source_URL,Price_Date,Fetch_Time,Source_System,Price_Validation_Status
-M000001,R0001,P0001,249.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000002,R0001,P0002,249.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000003,R0001,P0003,289.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000004,R0001,P0005,30.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000005,R0001,P0006,60.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000006,R0001,P0007,70.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000007,R0002,P0008,119.0,1,Thali,4.1,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000008,R0002,P0009,142.0,1,Thali,3.3,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000009,R0002,P0010,179.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000010,R0002,P0011,220.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000011,R0002,P0012,179.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000012,R0002,P0013,189.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000013,R0002,P0014,240.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000014,R0002,P0042,189.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000015,R0002,P0015,179.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000016,R0002,P0016,209.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000017,R0003,P0010,150.0,1,Serving,4.5,Delivery,https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000018,R0003,P0017,80.0,1,Serving,4.4,Delivery,https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000019,R0003,P0018,119.0,1,Serving,3.3,Delivery,https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000020,R0003,P0013,125.0,1,Serving,4.2,Delivery,https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000021,R0003,P0019,170.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000022,R0004,P0001,300.0,1,Serving,4.3,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000023,R0004,P0020,300.0,1,Serving,4.0,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000024,R0004,P0021,340.0,1,Serving,5.0,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000025,R0004,P0022,285.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000026,R0004,P0023,400.0,1,Serving,4.0,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000027,R0004,P0024,385.0,1,Serving,5.0,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000028,R0004,P0011,300.0,1,Serving,4.2,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000029,R0005,P0026,251.0,1,Thali,4.4,Delivery,https://www.swiggy.com/city/ahmedabad/sorath-suddh-kathiyawadi-restaurant-gota-jagatpur-rest157685,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000030,R0006,P0021,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000031,R0006,P0014,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000032,R0006,P0011,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000033,R0006,P0004,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000034,R0006,P0027,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000035,R0006,P0041,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000036,R0007,P0009,180.0,1,Thali,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000037,R0007,P0014,140.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000038,R0007,P0028,230.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000039,R0007,P0042,210.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000040,R0007,P0029,45.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000041,R0007,P0006,65.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000042,R0008,P0011,240.0,1,Serving,4.1,Delivery,https://www.swiggy.com/city/ahmedabad/kathyawadi-chatako-vastrapur-rest570833,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000043,R0009,P0030,186.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000044,R0009,P0028,186.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000045,R0009,P0031,31.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000046,R0009,P0032,47.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000047,R0009,P0033,31.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000048,R0009,P0034,54.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000049,R0009,P0035,109.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000050,R0009,P0004,171.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000051,R0010,P0022,500.0,1,Serving,2.4,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000052,R0010,P0037,500.0,1,Serving,3.5,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000053,R0010,P0021,500.0,1,Serving,4.1,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000054,R0010,P0038,420.0,1,Serving,4.3,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000055,R0010,P0014,400.0,1,Serving,3.9,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000056,R0010,P0027,501.0,1,Serving,3.8,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000057,R0010,P0004,500.0,1,Serving,5.0,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000058,R0010,P0025,520.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000059,R0011,P0011,139.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000060,R0011,P0036,139.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000061,R0011,P0004,139.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000062,R0011,P0040,95.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000063,R0011,P0028,169.0,1,Plate,4.4,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000064,R0011,P0023,169.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000065,R0005,P0017,120.0,1,Serving,2.0,Delivery,Order from Sorath Suddh Kathiyawadi Restaurant online in Ahmedabad | Swiggy,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000066,R0005,P0011,120.0,1,Serving,5.0,Delivery,https://www.swiggy.com/city/ahmedabad/sorath-suddh-kathiyawadi-restaurant-gota-jagatpur-rest157685,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000067,R0012,P0025,120.0,200,Gm,,Delivery,Khodal Kathiyawadi Gota in Ahmedabad near me - Justdial,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000068,R0012,P0011,120.0,200,Gm,,Delivery,Khodal Kathiyawadi Gota in Ahmedabad near me - Justdial,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000069,R0012,P0039,140.0,200,Gm,,Delivery,Khodal Kathiyawadi Gota in Ahmedabad near me - Justdial,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000070,R0013,P0016,90.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/shree-varudi-khodiyar-gota,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000071,R0013,P0011,80.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/shree-varudi-khodiyar-gota,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000072,R0013,P0022,80.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/shree-varudi-khodiyar-gota,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000073,R0014,P0010,60.0,1,Serving,,Delivery,"Gurudev Kathiyawadi Restaurant, Bodakdev, Ahmedabad | Zomato",2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000074,R0014,P0005,40.0,1,Serving,,Delivery,"Gurudev Kathiyawadi Restaurant, Bodakdev, Ahmedabad | Zomato",2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000075,R0015,P0013,230.0,1,Serving,,Delivery,"Bajaro Kathiyawadi Restaurant in Gota,Ahmedabad - Order Food Online - Best Inexpensive Restaurants Below Rs 500 near me in Ahmedabad - Justdial",2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000076,R0016,P0017,60.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000077,R0016,P0018,110.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000078,R0016,P0013,120.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000079,R0016,P0009,220.0,1,Thali,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000080,R0016,P0001,190.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000081,R0016,P0011,170.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000082,R0016,P0023,230.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000083,R0016,P0025,170.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000084,R0017,P0011,135.0,1,Serving,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000085,R0017,P0012,135.0,1,Serving,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000086,R0017,P0039,135.0,1,Serving,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000087,R0017,P0018,175.0,1,Serving,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000088,R0017,P0013,200.0,1,Serving,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000089,R0017,P0036,190.0,250,Gm,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000090,R0017,P0011,160.0,250,Gm,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000091,R0017,P0013,160.0,250,Gm,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T03:28:42.864875+00:00,kathiyawadi_seed_workbook,ok
-M000092,R0031,P0009,190.0,Regular,Plate,,Full Meal,https://www.swiggy.com/city/gandhinagar/radhe-kathiyawadi-dhaba-kudasan,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000093,R0031,,160.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/radhe-kathiyawadi-dhaba-kudasan,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000094,R0031,P0043,50.0,Regular,Piece,,Breads,https://www.swiggy.com/city/gandhinagar/radhe-kathiyawadi-dhaba-kudasan,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000095,R0031,P0011,150.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/radhe-kathiyawadi-dhaba-kudasan,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000096,R0032,P0053,280.0,Unlimited,Thali,,Full Meal,https://www.zomato.com/gandhinagar/toran-dining-hall-sector-11,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000097,R0032,,240.0,Regular,Thali,,Full Meal,https://www.zomato.com/gandhinagar/toran-dining-hall-sector-11,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000098,R0032,P0049,35.0,Glass,Glass,,Beverage,https://www.zomato.com/gandhinagar/toran-dining-hall-sector-11,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000099,R0033,,140.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/tulsi-kathiyawadi-sargasan,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000100,R0033,P0011,150.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/tulsi-kathiyawadi-sargasan,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000101,R0033,P0028,160.0,Regular,Plate,,Specialty,https://www.swiggy.com/city/gandhinagar/tulsi-kathiyawadi-sargasan,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000102,R0033,P0050,170.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/tulsi-kathiyawadi-sargasan,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000103,R0034,P0056,260.0,Unlimited,Thali,,Full Meal,https://www.zomato.com/gandhinagar/sasumaa-sector-16,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000104,R0034,,170.0,Regular,Bowl,,Main Course,https://www.zomato.com/gandhinagar/sasumaa-sector-16,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000105,R0034,P0048,60.0,Regular,Piece,,Breads,https://www.zomato.com/gandhinagar/sasumaa-sector-16,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000106,R0035,P0009,170.0,Regular,Thali,,Full Meal,https://www.swiggy.com/city/gandhinagar/shree-chamunda-dhaba-infocity,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000107,R0035,P0051,130.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/shree-chamunda-dhaba-infocity,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000108,R0035,P0045,30.0,500ml,Bottle,,Beverage,https://www.swiggy.com/city/gandhinagar/shree-chamunda-dhaba-infocity,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000109,R0036,P0011,150.0,Regular,Bowl,,Main Course,https://www.zomato.com/gandhinagar/shree-khodiyar-kathiyawadi-pdpu-road,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000110,R0036,,160.0,Regular,Bowl,,Main Course,https://www.zomato.com/gandhinagar/shree-khodiyar-kathiyawadi-pdpu-road,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000111,R0036,P0043,45.0,Regular,Piece,,Breads,https://www.zomato.com/gandhinagar/shree-khodiyar-kathiyawadi-pdpu-road,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000112,R0037,,320.0,Unlimited,Thali,,Full Meal,https://www.swiggy.com/city/ahmedabad/atithi-dining-hall-bodakdev,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000113,R0037,P0054,190.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/ahmedabad/atithi-dining-hall-bodakdev,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000114,R0037,P0057,180.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/ahmedabad/atithi-dining-hall-bodakdev,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000115,R0038,,210.0,Regular,Thali,,Full Meal,https://www.swiggy.com/city/ahmedabad/grand-morbi-kathiyawadi-bopal,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000116,R0038,,160.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/ahmedabad/grand-morbi-kathiyawadi-bopal,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000117,R0038,P0011,160.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/ahmedabad/grand-morbi-kathiyawadi-bopal,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000118,R0038,P0047,70.0,Regular,Piece,,Breads,https://www.swiggy.com/city/ahmedabad/grand-morbi-kathiyawadi-bopal,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000119,R0039,P0046,270.0,Regular,Thali,,Full Meal,https://www.zomato.com/ahmedabad/gopi-dining-hall-ashram-road,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000120,R0039,,180.0,Regular,Bowl,,Main Course,https://www.zomato.com/ahmedabad/gopi-dining-hall-ashram-road,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000121,R0039,P0049,35.0,Glass,Glass,,Beverage,https://www.zomato.com/ahmedabad/gopi-dining-hall-ashram-road,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000122,R0040,P0055,290.0,Unlimited,Thali,,Full Meal,https://www.swiggy.com/city/ahmedabad/pakwan-dining-hall-satellite,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000123,R0040,P0052,175.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/ahmedabad/pakwan-dining-hall-satellite,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000124,R0040,P0044,65.0,Regular,Piece,,Breads,https://www.swiggy.com/city/ahmedabad/pakwan-dining-hall-satellite,,2026-09-18T03:28:42.864875+00:00,external_menu_csv,ok
-M000125,R0018,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000126,R0018,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000127,R0018,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000128,R0018,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000129,R0018,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000130,R0018,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000131,R0018,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000132,R0018,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000133,R0018,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000134,R0018,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000135,R0018,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000136,R0018,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000137,R0019,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000138,R0019,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000139,R0019,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000140,R0019,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000141,R0019,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000142,R0019,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000143,R0019,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000144,R0019,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000145,R0019,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000146,R0019,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000147,R0019,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000148,R0019,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000149,R0020,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000150,R0020,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000151,R0020,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000152,R0020,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000153,R0020,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000154,R0020,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000155,R0020,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000156,R0020,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000157,R0020,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000158,R0020,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000159,R0020,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000160,R0020,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000161,R0021,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000162,R0021,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000163,R0021,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000164,R0021,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000165,R0021,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000166,R0021,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000167,R0021,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000168,R0021,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000169,R0021,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000170,R0021,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000171,R0021,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000172,R0021,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000173,R0022,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000174,R0022,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000175,R0022,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000176,R0022,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000177,R0022,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000178,R0022,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000179,R0022,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000180,R0022,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000181,R0022,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000182,R0022,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000183,R0022,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000184,R0022,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000185,R0023,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000186,R0023,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000187,R0023,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000188,R0023,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000189,R0023,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000190,R0023,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000191,R0023,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000192,R0023,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000193,R0023,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000194,R0023,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000195,R0023,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000196,R0023,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000197,R0024,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000198,R0024,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000199,R0024,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000200,R0024,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000201,R0024,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000202,R0024,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000203,R0024,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000204,R0024,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000205,R0024,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000206,R0024,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000207,R0024,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000208,R0024,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000209,R0025,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000210,R0025,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000211,R0025,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000212,R0025,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000213,R0025,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000214,R0025,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000215,R0025,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000216,R0025,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000217,R0025,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000218,R0025,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000219,R0025,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000220,R0025,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000221,R0026,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000222,R0026,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000223,R0026,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000224,R0026,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000225,R0026,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000226,R0026,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000227,R0026,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000228,R0026,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000229,R0026,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000230,R0026,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000231,R0026,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000232,R0026,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000233,R0027,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000234,R0027,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000235,R0027,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000236,R0027,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000237,R0027,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000238,R0027,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000239,R0027,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000240,R0027,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000241,R0027,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000242,R0027,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000243,R0027,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000244,R0027,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000245,R0028,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000246,R0028,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000247,R0028,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000248,R0028,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000249,R0028,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000250,R0028,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000251,R0028,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000252,R0028,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000253,R0028,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000254,R0028,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000255,R0028,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000256,R0028,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000257,R0029,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000258,R0029,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000259,R0029,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000260,R0029,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000261,R0029,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000262,R0029,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000263,R0029,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000264,R0029,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000265,R0029,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000266,R0029,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000267,R0029,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000268,R0029,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000269,R0030,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000270,R0030,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000271,R0030,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000272,R0030,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000273,R0030,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000274,R0030,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000275,R0030,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000276,R0030,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000277,R0030,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000278,R0030,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000279,R0030,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
-M000280,R0030,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T03:28:42.864875+00:00,historical_benchmark_fallback,ok
+M000001,R0001,P0001,249.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000002,R0001,P0002,249.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000003,R0001,P0003,289.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000004,R0001,P0005,30.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000005,R0001,P0006,60.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000006,R0001,P0007,70.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-khodiyar-kathiyawadi-dhaba-naranpura-rest1231583,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000007,R0002,P0008,119.0,1,Thali,4.1,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000008,R0002,P0009,142.0,1,Thali,3.3,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000009,R0002,P0010,179.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000010,R0002,P0011,220.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000011,R0002,P0012,179.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000012,R0002,P0013,189.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000013,R0002,P0014,240.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000014,R0002,P0042,189.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000015,R0002,P0015,179.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000016,R0002,P0016,209.0,400,Gm,,Delivery,https://www.swiggy.com/city/ahmedabad/om-kathiyawadi-dhaba-prahlad-nagar-rest946578,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000017,R0003,P0010,150.0,1,Serving,4.5,Delivery,https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000018,R0003,P0017,80.0,1,Serving,4.4,Delivery,https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000019,R0003,P0018,119.0,1,Serving,3.3,Delivery,https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000020,R0003,P0013,125.0,1,Serving,4.2,Delivery,https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000021,R0003,P0019,170.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-chamunda-kathiyawadi-dhaba-chandkheda-rest666917,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000022,R0004,P0001,300.0,1,Serving,4.3,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000023,R0004,P0020,300.0,1,Serving,4.0,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000024,R0004,P0021,340.0,1,Serving,5.0,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000025,R0004,P0022,285.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000026,R0004,P0023,400.0,1,Serving,4.0,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000027,R0004,P0024,385.0,1,Serving,5.0,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000028,R0004,P0011,300.0,1,Serving,4.2,Delivery,https://www.swiggy.com/city/ahmedabad/shree-marutinandan-kathiyawadi-restaurant-shahpur-rest787611,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000029,R0005,P0026,251.0,1,Thali,4.4,Delivery,https://www.swiggy.com/city/ahmedabad/sorath-suddh-kathiyawadi-restaurant-gota-jagatpur-rest157685,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000030,R0006,P0021,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000031,R0006,P0014,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000032,R0006,P0011,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000033,R0006,P0004,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000034,R0006,P0027,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000035,R0006,P0041,160.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/damodar-kathiyawadi-vastrapur-rest1408681,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000036,R0007,P0009,180.0,1,Thali,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000037,R0007,P0014,140.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000038,R0007,P0028,230.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000039,R0007,P0042,210.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000040,R0007,P0029,45.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000041,R0007,P0006,65.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/gir-kathiyawadi-restaurant-vastrapur-rest1113553,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000042,R0008,P0011,240.0,1,Serving,4.1,Delivery,https://www.swiggy.com/city/ahmedabad/kathyawadi-chatako-vastrapur-rest570833,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000043,R0009,P0030,186.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000044,R0009,P0028,186.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000045,R0009,P0031,31.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000046,R0009,P0032,47.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000047,R0009,P0033,31.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000048,R0009,P0034,54.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000049,R0009,P0035,109.0,1,Plate,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000050,R0009,P0004,171.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/mr-and-mrs-kathiyawadi-vastrapur-rest1391742,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000051,R0010,P0022,500.0,1,Serving,2.4,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000052,R0010,P0037,500.0,1,Serving,3.5,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000053,R0010,P0021,500.0,1,Serving,4.1,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000054,R0010,P0038,420.0,1,Serving,4.3,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000055,R0010,P0014,400.0,1,Serving,3.9,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000056,R0010,P0027,501.0,1,Serving,3.8,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000057,R0010,P0004,500.0,1,Serving,5.0,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000058,R0010,P0025,520.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/rudu-kathiawad-vastrapur-rest99672,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000059,R0011,P0011,139.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000060,R0011,P0036,139.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000061,R0011,P0004,139.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000062,R0011,P0040,95.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000063,R0011,P0028,169.0,1,Plate,4.4,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000064,R0011,P0023,169.0,1,Serving,,Delivery,https://www.swiggy.com/city/ahmedabad/special-kathiyawadi-vastrapur-rest1319021,2026-08-25,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000065,R0005,P0017,120.0,1,Serving,2.0,Delivery,Order from Sorath Suddh Kathiyawadi Restaurant online in Ahmedabad | Swiggy,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000066,R0005,P0011,120.0,1,Serving,5.0,Delivery,https://www.swiggy.com/city/ahmedabad/sorath-suddh-kathiyawadi-restaurant-gota-jagatpur-rest157685,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000067,R0012,P0025,120.0,200,Gm,,Delivery,Khodal Kathiyawadi Gota in Ahmedabad near me - Justdial,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000068,R0012,P0011,120.0,200,Gm,,Delivery,Khodal Kathiyawadi Gota in Ahmedabad near me - Justdial,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000069,R0012,P0039,140.0,200,Gm,,Delivery,Khodal Kathiyawadi Gota in Ahmedabad near me - Justdial,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000070,R0013,P0016,90.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/shree-varudi-khodiyar-gota,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000071,R0013,P0011,80.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/shree-varudi-khodiyar-gota,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000072,R0013,P0022,80.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/shree-varudi-khodiyar-gota,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000073,R0014,P0010,60.0,1,Serving,,Delivery,"Gurudev Kathiyawadi Restaurant, Bodakdev, Ahmedabad | Zomato",2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000074,R0014,P0005,40.0,1,Serving,,Delivery,"Gurudev Kathiyawadi Restaurant, Bodakdev, Ahmedabad | Zomato",2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000075,R0015,P0013,230.0,1,Serving,,Delivery,"Bajaro Kathiyawadi Restaurant in Gota,Ahmedabad - Order Food Online - Best Inexpensive Restaurants Below Rs 500 near me in Ahmedabad - Justdial",2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000076,R0016,P0017,60.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000077,R0016,P0018,110.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000078,R0016,P0013,120.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000079,R0016,P0009,220.0,1,Thali,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000080,R0016,P0001,190.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000081,R0016,P0011,170.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000082,R0016,P0023,230.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000083,R0016,P0025,170.0,1,Serving,,Delivery,https://www.zomato.com/ahmedabad/maher-kathiyawadi-shahibagh/menu,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000084,R0017,P0011,135.0,1,Serving,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000085,R0017,P0012,135.0,1,Serving,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000086,R0017,P0039,135.0,1,Serving,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000087,R0017,P0018,175.0,1,Serving,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000088,R0017,P0013,200.0,1,Serving,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000089,R0017,P0036,190.0,250,Gm,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000090,R0017,P0011,160.0,250,Gm,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000091,R0017,P0013,160.0,250,Gm,,Delivery,https://www.justdial.com/Ahmedabad/Kismat-Kathiyawadi-Gota/079PXX79-XX79-210118182241-I6K9_BZDET,2026-08-25 00:00:00,2026-09-18T15:56:03.612693+00:00,kathiyawadi_seed_workbook,ok
+M000092,R0031,P0009,190.0,Regular,Plate,,Full Meal,https://www.swiggy.com/city/gandhinagar/radhe-kathiyawadi-dhaba-kudasan,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000093,R0031,,160.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/radhe-kathiyawadi-dhaba-kudasan,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000094,R0031,P0043,50.0,Regular,Piece,,Breads,https://www.swiggy.com/city/gandhinagar/radhe-kathiyawadi-dhaba-kudasan,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000095,R0031,P0011,150.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/radhe-kathiyawadi-dhaba-kudasan,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000096,R0032,P0053,280.0,Unlimited,Thali,,Full Meal,https://www.zomato.com/gandhinagar/toran-dining-hall-sector-11,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000097,R0032,,240.0,Regular,Thali,,Full Meal,https://www.zomato.com/gandhinagar/toran-dining-hall-sector-11,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000098,R0032,P0049,35.0,Glass,Glass,,Beverage,https://www.zomato.com/gandhinagar/toran-dining-hall-sector-11,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000099,R0033,,140.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/tulsi-kathiyawadi-sargasan,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000100,R0033,P0011,150.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/tulsi-kathiyawadi-sargasan,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000101,R0033,P0028,160.0,Regular,Plate,,Specialty,https://www.swiggy.com/city/gandhinagar/tulsi-kathiyawadi-sargasan,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000102,R0033,P0050,170.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/tulsi-kathiyawadi-sargasan,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000103,R0034,P0056,260.0,Unlimited,Thali,,Full Meal,https://www.zomato.com/gandhinagar/sasumaa-sector-16,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000104,R0034,,170.0,Regular,Bowl,,Main Course,https://www.zomato.com/gandhinagar/sasumaa-sector-16,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000105,R0034,P0048,60.0,Regular,Piece,,Breads,https://www.zomato.com/gandhinagar/sasumaa-sector-16,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000106,R0035,P0009,170.0,Regular,Thali,,Full Meal,https://www.swiggy.com/city/gandhinagar/shree-chamunda-dhaba-infocity,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000107,R0035,P0051,130.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/gandhinagar/shree-chamunda-dhaba-infocity,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000108,R0035,P0045,30.0,500ml,Bottle,,Beverage,https://www.swiggy.com/city/gandhinagar/shree-chamunda-dhaba-infocity,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000109,R0036,P0011,150.0,Regular,Bowl,,Main Course,https://www.zomato.com/gandhinagar/shree-khodiyar-kathiyawadi-pdpu-road,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000110,R0036,,160.0,Regular,Bowl,,Main Course,https://www.zomato.com/gandhinagar/shree-khodiyar-kathiyawadi-pdpu-road,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000111,R0036,P0043,45.0,Regular,Piece,,Breads,https://www.zomato.com/gandhinagar/shree-khodiyar-kathiyawadi-pdpu-road,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000112,R0037,,320.0,Unlimited,Thali,,Full Meal,https://www.swiggy.com/city/ahmedabad/atithi-dining-hall-bodakdev,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000113,R0037,P0054,190.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/ahmedabad/atithi-dining-hall-bodakdev,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000114,R0037,P0057,180.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/ahmedabad/atithi-dining-hall-bodakdev,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000115,R0038,,210.0,Regular,Thali,,Full Meal,https://www.swiggy.com/city/ahmedabad/grand-morbi-kathiyawadi-bopal,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000116,R0038,,160.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/ahmedabad/grand-morbi-kathiyawadi-bopal,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000117,R0038,P0011,160.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/ahmedabad/grand-morbi-kathiyawadi-bopal,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000118,R0038,P0047,70.0,Regular,Piece,,Breads,https://www.swiggy.com/city/ahmedabad/grand-morbi-kathiyawadi-bopal,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000119,R0039,P0046,270.0,Regular,Thali,,Full Meal,https://www.zomato.com/ahmedabad/gopi-dining-hall-ashram-road,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000120,R0039,,180.0,Regular,Bowl,,Main Course,https://www.zomato.com/ahmedabad/gopi-dining-hall-ashram-road,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000121,R0039,P0049,35.0,Glass,Glass,,Beverage,https://www.zomato.com/ahmedabad/gopi-dining-hall-ashram-road,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000122,R0040,P0055,290.0,Unlimited,Thali,,Full Meal,https://www.swiggy.com/city/ahmedabad/pakwan-dining-hall-satellite,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000123,R0040,P0052,175.0,Regular,Bowl,,Main Course,https://www.swiggy.com/city/ahmedabad/pakwan-dining-hall-satellite,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000124,R0040,P0044,65.0,Regular,Piece,,Breads,https://www.swiggy.com/city/ahmedabad/pakwan-dining-hall-satellite,,2026-09-18T15:56:03.612693+00:00,external_menu_csv,ok
+M000125,R0018,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000126,R0018,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000127,R0018,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000128,R0018,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000129,R0018,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000130,R0018,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000131,R0018,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000132,R0018,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000133,R0018,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000134,R0018,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000135,R0018,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000136,R0018,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2477174077,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000137,R0019,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000138,R0019,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000139,R0019,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000140,R0019,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000141,R0019,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000142,R0019,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000143,R0019,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000144,R0019,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000145,R0019,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000146,R0019,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000147,R0019,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000148,R0019,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/2679948361,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000149,R0020,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000150,R0020,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000151,R0020,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000152,R0020,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000153,R0020,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000154,R0020,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000155,R0020,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000156,R0020,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000157,R0020,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000158,R0020,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000159,R0020,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000160,R0020,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/3776238979,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000161,R0021,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000162,R0021,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000163,R0021,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000164,R0021,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000165,R0021,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000166,R0021,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000167,R0021,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000168,R0021,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000169,R0021,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000170,R0021,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000171,R0021,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000172,R0021,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4305633595,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000173,R0022,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000174,R0022,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000175,R0022,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000176,R0022,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000177,R0022,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000178,R0022,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000179,R0022,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000180,R0022,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000181,R0022,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000182,R0022,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000183,R0022,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000184,R0022,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/4723369292,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000185,R0023,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000186,R0023,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000187,R0023,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000188,R0023,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000189,R0023,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000190,R0023,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000191,R0023,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000192,R0023,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000193,R0023,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000194,R0023,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000195,R0023,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000196,R0023,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5177688241,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000197,R0024,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000198,R0024,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000199,R0024,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000200,R0024,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000201,R0024,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000202,R0024,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000203,R0024,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000204,R0024,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000205,R0024,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000206,R0024,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000207,R0024,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000208,R0024,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/5527662483,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000209,R0025,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000210,R0025,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000211,R0025,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000212,R0025,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000213,R0025,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000214,R0025,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000215,R0025,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000216,R0025,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000217,R0025,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000218,R0025,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000219,R0025,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000220,R0025,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/8548483880,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000221,R0026,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000222,R0026,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000223,R0026,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000224,R0026,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000225,R0026,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000226,R0026,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000227,R0026,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000228,R0026,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000229,R0026,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000230,R0026,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000231,R0026,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000232,R0026,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9123477265,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000233,R0027,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000234,R0027,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000235,R0027,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000236,R0027,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000237,R0027,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000238,R0027,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000239,R0027,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000240,R0027,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000241,R0027,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000242,R0027,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000243,R0027,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000244,R0027,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/9310325493,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000245,R0028,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000246,R0028,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000247,R0028,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000248,R0028,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000249,R0028,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000250,R0028,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000251,R0028,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000252,R0028,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000253,R0028,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000254,R0028,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000255,R0028,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000256,R0028,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/11539673209,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000257,R0029,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000258,R0029,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000259,R0029,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000260,R0029,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000261,R0029,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000262,R0029,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000263,R0029,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000264,R0029,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000265,R0029,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000266,R0029,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000267,R0029,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000268,R0029,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/node/14090334447,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000269,R0030,P0006,62.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000270,R0030,P0035,109.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000271,R0030,P0020,300.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000272,R0030,P0029,45.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000273,R0030,P0003,289.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000274,R0030,P0039,137.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000275,R0030,P0021,340.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000276,R0030,P0022,285.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000277,R0030,P0014,200.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000278,R0030,P0013,174.5,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000279,R0030,P0012,157.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
+M000280,R0030,P0007,70.0,Regular,Plate,,Main Course,https://www.openstreetmap.org/way/451514771,2026-09-18,2026-09-18T15:56:03.612693+00:00,historical_benchmark_fallback,ok
