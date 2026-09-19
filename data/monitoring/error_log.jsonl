@@ -45,3 +45,5 @@
 {"run_timestamp": "20260918_155603", "source": "openstreetmap_overpass", "error": "https://overpass-api.de/api/interpreter returned status 504", "endpoint": "https://overpass-api.de/api/interpreter", "attempt": 1}
 {"run_timestamp": "20260918_155603", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
 {"run_timestamp": "20260918_155603", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
+{"run_timestamp": "20260919_032520", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
+{"run_timestamp": "20260919_032520", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
