@@ -79,3 +79,5 @@
 {"run_timestamp": "20260921_175548", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
 {"run_timestamp": "20260922_033600", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
 {"run_timestamp": "20260922_033600", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
+{"run_timestamp": "20260922_162333", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
+{"run_timestamp": "20260922_162333", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
