@@ -114,3 +114,5 @@
 {"run_timestamp": "20260925_164153", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
 {"run_timestamp": "20260925_164153", "source": "openstreetmap_overpass", "error": "HTTPSConnectionPool(host='overpass.private.coffee', port=443): Read timed out. (read timeout=35)"}
 {"run_timestamp": "20260925_164153", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
+{"run_timestamp": "20260926_034948", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
+{"run_timestamp": "20260926_034948", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
