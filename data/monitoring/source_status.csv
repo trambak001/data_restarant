@@ -176,3 +176,8 @@ run_timestamp,source,status,record_count,latency_ms,is_fallback,error
 20260926_155421,google_places,skipped,0,0.2,False,GOOGLE_PLACES_API_KEY is not set
 20260926_155421,external_menu_csv,success,33,4.1,False,
 20260926_155421,community_experience,success,0,1.6,False,
+20260927_035904,kathiyawadi_seed_workbook,success,108,12.6,False,
+20260927_035904,openstreetmap_overpass,success,14,2255.7,False,
+20260927_035904,google_places,skipped,0,0.2,False,GOOGLE_PLACES_API_KEY is not set
+20260927_035904,external_menu_csv,success,33,4.0,False,
+20260927_035904,community_experience,success,0,1.8,False,
