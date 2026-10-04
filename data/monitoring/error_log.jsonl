@@ -160,3 +160,7 @@
 {"run_timestamp": "20261003_154844", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
 {"run_timestamp": "20261004_043654", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
 {"run_timestamp": "20261004_043654", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
+{"run_timestamp": "20261004_163123", "source": "openstreetmap_overpass", "error": "https://overpass-api.de/api/interpreter returned status 504", "endpoint": "https://overpass-api.de/api/interpreter", "attempt": 0}
+{"run_timestamp": "20261004_163123", "source": "openstreetmap_overpass", "error": "https://overpass-api.de/api/interpreter returned status 504", "endpoint": "https://overpass-api.de/api/interpreter", "attempt": 1}
+{"run_timestamp": "20261004_163123", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
+{"run_timestamp": "20261004_163123", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
