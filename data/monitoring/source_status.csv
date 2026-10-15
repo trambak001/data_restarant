@@ -356,3 +356,8 @@ run_timestamp,source,status,record_count,latency_ms,is_fallback,error
 20261015_032807,google_places,skipped,0,0.1,False,GOOGLE_PLACES_API_KEY is not set
 20261015_032807,external_menu_csv,success,33,2.2,False,
 20261015_032807,community_experience,success,0,0.9,False,
+20261015_162516,kathiyawadi_seed_workbook,success,108,12.0,False,
+20261015_162516,openstreetmap_overpass,failed,0,44579.5,False,https://overpass.private.coffee/api/interpreter returned status 500
+20261015_162516,google_places,skipped,0,0.1,False,GOOGLE_PLACES_API_KEY is not set
+20261015_162516,external_menu_csv,success,33,3.9,False,
+20261015_162516,community_experience,success,0,1.7,False,
