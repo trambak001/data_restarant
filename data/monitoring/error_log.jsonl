@@ -255,3 +255,8 @@
 {"run_timestamp": "20261017_031404", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
 {"run_timestamp": "20261017_150355", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
 {"run_timestamp": "20261017_150355", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
+{"run_timestamp": "20261018_031814", "source": "openstreetmap_overpass", "error": "https://overpass-api.de/api/interpreter returned status 502", "endpoint": "https://overpass-api.de/api/interpreter", "attempt": 0}
+{"run_timestamp": "20261018_031814", "source": "openstreetmap_overpass", "error": "https://overpass-api.de/api/interpreter returned status 502", "endpoint": "https://overpass-api.de/api/interpreter", "attempt": 1}
+{"run_timestamp": "20261018_031814", "source": "openstreetmap_overpass", "error": "https://overpass-api.de/api/interpreter returned status 502", "endpoint": "https://overpass-api.de/api/interpreter", "attempt": 2}
+{"run_timestamp": "20261018_031814", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set"}
+{"run_timestamp": "20261018_031814", "source": "google_places", "error": "GOOGLE_PLACES_API_KEY is not set", "type": "skipped"}
