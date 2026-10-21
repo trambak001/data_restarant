@@ -411,3 +411,8 @@ run_timestamp,source,status,record_count,latency_ms,is_fallback,error
 20261020_162614,google_places,skipped,0,0.0,False,GOOGLE_PLACES_API_KEY is not set
 20261020_162614,external_menu_csv,success,33,2.7,False,
 20261020_162614,community_experience,success,0,1.5,False,
+20261021_033249,kathiyawadi_seed_workbook,success,108,7.0,False,
+20261021_033249,openstreetmap_overpass,failed,0,302166.5,False,"HTTPSConnectionPool(host='overpass.private.coffee', port=443): Read timed out. (read timeout=35)"
+20261021_033249,google_places,skipped,0,0.0,False,GOOGLE_PLACES_API_KEY is not set
+20261021_033249,external_menu_csv,success,33,2.4,False,
+20261021_033249,community_experience,success,0,1.3,False,
